@@ -149,7 +149,8 @@ def ner(tsv, ner_rest_endpoint):
 @click.option('--ner-rest-endpoint', type=str, default=None,
               help="REST endpoint of sbb_ner service. See https://github.com/qurator-spk/sbb_ner for details.")
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
-def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy):
+@click.option('--scale-factor', type=float, default=0.5685, help='default: 0.5685')
+def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy, scale_factor):
 
     if noproxy:
         os.environ['no_proxy'] = '*'
@@ -173,7 +174,7 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy)
             for coords in words.findall('.//{%s}Coords' % xmlns):
 
                 # transform the OCR coordinates by 0.5685 to derive the correct coords for the web presentation image
-                points = [int(0.5685 * float(pos)) for p in coords.attrib['points'].split(' ') for pos in p.split(',')]
+                points = [int(scale_factor * float(pos)) for p in coords.attrib['points'].split(' ') for pos in p.split(',')]
 
                 x_points = [points[i] for i in range(0, len(points), 2)]
                 y_points = [points[i] for i in range(1, len(points), 2)]
@@ -193,6 +194,7 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy)
                                      'url_id', 'left', 'right', 'top', 'bottom'])
 
     if ner_rest_endpoint is not None:
+
         tsv = ner(tsv, ner_rest_endpoint)
 
     tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
