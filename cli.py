@@ -203,8 +203,8 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy,
     tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] + out_columns)
 
     vlinecenter = pd.DataFrame(tsv[['line', 'top']].groupby('line', sort=False).mean().top +
-                               (tsv[['line', 'bottom']].groupby('line').mean().bottom -
-                                tsv[['line', 'top']].groupby('line').mean().top) / 2, columns=['vlinecenter'])
+                               (tsv[['line', 'bottom']].groupby('line', sort=False).mean().bottom -
+                                tsv[['line', 'top']].groupby('line', sort=False).mean().top) / 2, columns=['vlinecenter'])
 
     tsv = tsv.merge(vlinecenter, left_on='line', right_index=True)
 
