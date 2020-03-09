@@ -152,6 +152,8 @@ def ner(tsv, ner_rest_endpoint):
 @click.option('--scale-factor', type=float, default=0.5685, help='default: 0.5685')
 def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy, scale_factor):
 
+    out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'GND-ID', 'url_id', 'left', 'right', 'top', 'bottom']
+
     if noproxy:
         os.environ['no_proxy'] = '*'
 
@@ -164,34 +166,53 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy,
 
         urls = [part['url'] for part in parts]
     else:
-        pd.DataFrame([], columns=['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'GND-ID', 'url_id', 'left', 'right', 'top',
-                                  'bottom']). to_csv(tsv_out_file, sep="\t", quoting=3, index=False)
+        pd.DataFrame([], columns=out_columns). to_csv(tsv_out_file, sep="\t", quoting=3, index=False)
 
     tsv = []
-    for words in tree.findall('.//{%s}Word' % xmlns):
-        for word in words.findall('.//{%s}Unicode' % xmlns):
-            text = word.text
-            for coords in words.findall('.//{%s}Coords' % xmlns):
+    line_number = 0
+    rgn_number = 0
+    for region in tree.findall('.//{%s}TextRegion' % xmlns):
+        rgn_number += 1
+        for text_line in region.findall('.//{%s}TextLine' % xmlns):
+            line_number += 1
+            for words in text_line.findall('.//{%s}Word' % xmlns):
+                for word in words.findall('.//{%s}Unicode' % xmlns):
+                    text = word.text
+                    for coords in words.findall('.//{%s}Coords' % xmlns):
 
-                # transform OCR coordinates using `scale_factor` to derive correct coordinates for the web presentation image
-                points = [int(scale_factor * float(pos)) for p in coords.attrib['points'].split(' ') for pos in p.split(',')]
+                        # transform OCR coordinates using `scale_factor` to derive
+                        # correct coordinates for the web presentation image
+                        points = [int(scale_factor * float(pos))
+                                  for p in coords.attrib['points'].split(' ') for pos in p.split(',')]
 
-                x_points = [points[i] for i in range(0, len(points), 2)]
-                y_points = [points[i] for i in range(1, len(points), 2)]
+                        x_points = [points[i] for i in range(0, len(points), 2)]
+                        y_points = [points[i] for i in range(1, len(points), 2)]
 
-                left = min(x_points)
-                right = max(x_points)
-                top = min(y_points)
-                bottom = max(y_points)
+                        left = min(x_points)
+                        right = max(x_points)
+                        top = min(y_points)
+                        bottom = max(y_points)
 
-                tsv.append((0, text, 'O', 'O', '-', len(urls), left, right, top, bottom))
+                        tsv.append((rgn_number, line_number, left + (right-left)/2.0,
+                                    0, text, 'O', 'O', '-', len(urls), left, right, top, bottom))
 
     with open(tsv_out_file, 'a') as f:
 
         f.write('# ' + image_url + '\n')
 
-    tsv = pd.DataFrame(tsv, columns=['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'GND-ID',
-                                     'url_id', 'left', 'right', 'top', 'bottom'])
+    tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] + out_columns)
+
+    vlinecenter = pd.DataFrame(tsv[['line', 'top']].groupby('line', sort=False).mean().top +
+                               (tsv[['line', 'bottom']].groupby('line').mean().bottom -
+                                tsv[['line', 'top']].groupby('line').mean().top) / 2, columns=['vlinecenter'])
+
+    tsv = tsv.merge(vlinecenter, left_on='line', right_index=True)
+
+    regions = [region.sort_values(['vlinecenter', 'hcenter']) for rid, region in tsv.groupby('rid', sort=False)]
+
+    tsv = pd.concat(regions)
+
+    tsv = tsv[out_columns].reset_index(drop=True)
 
     if ner_rest_endpoint is not None:
 
