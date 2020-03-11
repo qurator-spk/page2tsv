@@ -175,10 +175,16 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy,
         rgn_number += 1
         for text_line in region.findall('.//{%s}TextLine' % xmlns):
             line_number += 1
-            for words in text_line.findall('.//{%s}Word' % xmlns):
-                for word in words.findall('.//{%s}Unicode' % xmlns):
+
+            # import ipdb; ipdb.set_trace()
+
+            for words in text_line.findall('./{%s}Word' % xmlns):
+
+                # import ipdb;ipdb.set_trace()
+
+                for word in words.findall('./{%s}TextEquiv/{%s}Unicode' % (xmlns, xmlns)):
                     text = word.text
-                    for coords in words.findall('.//{%s}Coords' % xmlns):
+                    for coords in words.findall('./{%s}Coords' % xmlns):
 
                         # transform OCR coordinates using `scale_factor` to derive
                         # correct coordinates for the web presentation image
