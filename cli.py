@@ -117,7 +117,9 @@ def ner(tsv, ner_rest_endpoint):
 
             yield '', '', True
 
-    result_sequence = iterate_ner_results(json.loads(resp.content))
+    ner_result = json.loads(resp.content)
+
+    result_sequence = iterate_ner_results(ner_result)
 
     tsv_result = []
     for idx, row in tsv.iterrows():
@@ -139,7 +141,48 @@ def ner(tsv, ner_rest_endpoint):
                                    row.bottom))
 
     return pd.DataFrame(tsv_result, columns=['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'GND-ID', 'url_id',
-                                             'left', 'right', 'top', 'bottom'])
+                                             'left', 'right', 'top', 'bottom']), ner_result
+
+
+def ned(tsv, ner_result, ned_rest_endpoint):
+
+    resp = requests.post(url=ned_rest_endpoint + '/parse', json=ner_result)
+
+    ner_parsed = json.loads(resp.content)
+
+    resp = requests.post(url=ned_rest_endpoint + '/ned', json=ner_parsed, timeout=3600000)
+
+    ned_result = json.loads(resp.content)
+
+    rids = []
+    entity = ""
+    entity_type = None
+    for rid, row in tsv.iterrows():
+
+        if (entity != "") and ((row['NE-TAG'] == 'O') or (row['NE-TAG'].startswith('B-'))):
+
+            eid = entity + "-" + entity_type
+
+            if eid in ned_result:
+                candidates = ned_result[eid]
+
+                tsv.loc[rids, 'GND-ID'] = candidates[0][1]['wikidata']
+
+            rids = []
+            entity = ""
+            entity_type = None
+
+        if row['NE-TAG'] != 'O':
+
+            entity_type = row['NE-TAG'][2:]
+
+            entity += " " if entity != "" else ""
+
+            entity += row['TOKEN']
+
+            rids.append(rid)
+
+    return tsv
 
 
 @click.command()
@@ -148,9 +191,11 @@ def ner(tsv, ner_rest_endpoint):
 @click.option('--image-url', type=str, default='http://empty')
 @click.option('--ner-rest-endpoint', type=str, default=None,
               help="REST endpoint of sbb_ner service. See https://github.com/qurator-spk/sbb_ner for details.")
+@click.option('--ned-rest-endpoint', type=str, default=None,
+              help="REST endpoint of sbb_ned service. See https://github.com/qurator-spk/sbb_ned for details.")
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
 @click.option('--scale-factor', type=float, default=0.5685, help='default: 0.5685')
-def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy, scale_factor):
+def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, ned_rest_endpoint, noproxy, scale_factor):
 
     out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'GND-ID', 'url_id', 'left', 'right', 'top', 'bottom']
 
@@ -176,11 +221,7 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy,
         for text_line in region.findall('.//{%s}TextLine' % xmlns):
             line_number += 1
 
-            # import ipdb; ipdb.set_trace()
-
             for words in text_line.findall('./{%s}Word' % xmlns):
-
-                # import ipdb;ipdb.set_trace()
 
                 for word in words.findall('./{%s}TextEquiv/{%s}Unicode' % (xmlns, xmlns)):
                     text = word.text
@@ -222,6 +263,10 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, noproxy,
 
     if ner_rest_endpoint is not None:
 
-        tsv = ner(tsv, ner_rest_endpoint)
+        tsv, ner_result = ner(tsv, ner_rest_endpoint)
+
+        if ned_rest_endpoint is not None:
+
+            tsv = ned(tsv, ner_result, ned_rest_endpoint)
 
     tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
