@@ -140,7 +140,7 @@ def ner(tsv, ner_rest_endpoint):
                 tsv_result.append((0, ner_token, ner_tag, 'O', '-', row.url_id, row.left, row.right, row.top,
                                    row.bottom))
 
-    return pd.DataFrame(tsv_result, columns=['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'GND-ID', 'url_id',
+    return pd.DataFrame(tsv_result, columns=['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id',
                                              'left', 'right', 'top', 'bottom']), ner_result
 
 
@@ -166,7 +166,7 @@ def ned(tsv, ner_result, ned_rest_endpoint):
             if eid in ned_result:
                 candidates = ned_result[eid]
 
-                tsv.loc[rids, 'GND-ID'] = candidates[0][1]['wikidata']
+                tsv.loc[rids, 'ID'] = candidates[0][1]['wikidata']
 
             rids = []
             entity = ""
@@ -197,7 +197,7 @@ def ned(tsv, ner_result, ned_rest_endpoint):
 @click.option('--scale-factor', type=float, default=0.5685, help='default: 0.5685')
 def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, ned_rest_endpoint, noproxy, scale_factor):
 
-    out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'GND-ID', 'url_id', 'left', 'right', 'top', 'bottom']
+    out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom']
 
     if noproxy:
         os.environ['no_proxy'] = '*'
