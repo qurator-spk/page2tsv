@@ -107,6 +107,8 @@ def ner(tsv, ner_rest_endpoint):
 
     resp = requests.post(url=ner_rest_endpoint, json={'text': " ".join(tsv.TOKEN.tolist())})
 
+    resp.raise_for_status()
+
     def iterate_ner_results(result_sentences):
 
         for sen in result_sentences:
@@ -148,9 +150,13 @@ def ned(tsv, ner_result, ned_rest_endpoint):
 
     resp = requests.post(url=ned_rest_endpoint + '/parse', json=ner_result)
 
+    resp.raise_for_status()
+
     ner_parsed = json.loads(resp.content)
 
     resp = requests.post(url=ned_rest_endpoint + '/ned', json=ner_parsed, timeout=3600000)
+
+    resp.raise_for_status()
 
     ned_result = json.loads(resp.content)
 
@@ -261,12 +267,40 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, ned_rest
 
     tsv = tsv[out_columns].reset_index(drop=True)
 
-    if ner_rest_endpoint is not None:
+    try:
+        if ner_rest_endpoint is not None:
 
-        tsv, ner_result = ner(tsv, ner_rest_endpoint)
+            tsv, ner_result = ner(tsv, ner_rest_endpoint)
 
-        if ned_rest_endpoint is not None:
+            if ned_rest_endpoint is not None:
 
-            tsv = ned(tsv, ner_result, ned_rest_endpoint)
+                tsv = ned(tsv, ner_result, ned_rest_endpoint)
 
-    tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
+        tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
+    except requests.HTTPError as e:
+        print(e)
+
+
+@click.command()
+@click.argument('tsv-file', type=click.Path(exists=True), required=True, nargs=1)
+@click.argument('tsv-out-file', type=click.Path(), required=True, nargs=1)
+@click.option('--ner-rest-endpoint', type=str, default=None,
+              help="REST endpoint of sbb_ner service. See https://github.com/qurator-spk/sbb_ner for details.")
+@click.option('--ned-rest-endpoint', type=str, default=None,
+              help="REST endpoint of sbb_ned service. See https://github.com/qurator-spk/sbb_ned for details.")
+def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint):
+
+    tsv = pd.read_csv(tsv_file, sep='\t', comment='#', quoting=3)
+
+    try:
+        if ner_rest_endpoint is not None:
+
+            tsv, ner_result = ner(tsv, ner_rest_endpoint)
+
+            if ned_rest_endpoint is not None:
+
+                tsv = ned(tsv, ner_result, ned_rest_endpoint)
+
+        tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
+    except requests.HTTPError as e:
+        print(e)

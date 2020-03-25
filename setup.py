@@ -22,7 +22,8 @@ setup(
       'console_scripts': [
         "extract-doc-links=cli:extract_document_links",
         "annotate-tsv=cli:annotate_tsv",
-        "page2tsv=cli:page2tsv"
+        "page2tsv=cli:page2tsv",
+        "find-entities=cli:find_entities"
       ]
     },
     python_requires='>=3.6.0',
