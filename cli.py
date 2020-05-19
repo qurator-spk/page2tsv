@@ -305,7 +305,11 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, ned_rest
 @click.option('--ned-rest-endpoint', type=str, default=None,
               help="REST endpoint of sbb_ned service. See https://github.com/qurator-spk/sbb_ned for details.")
 @click.option('--ned-json-file', type=str, default=None)
-def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, ned_json_file):
+@click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: proxy is enabled.')
+def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, ned_json_file, noproxy):
+
+    if noproxy:
+        os.environ['no_proxy'] = '*'
 
     tsv = pd.read_csv(tsv_file, sep='\t', comment='#', quoting=3)
 
