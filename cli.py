@@ -146,23 +146,31 @@ def ner(tsv, ner_rest_endpoint):
                                              'left', 'right', 'top', 'bottom']), ner_result
 
 
-def ned(tsv, ner_result, ned_rest_endpoint, return_full=False, threshold=None):
+def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
 
-    resp = requests.post(url=ned_rest_endpoint + '/parse', json=ner_result)
+    if os.path.exists(json_file):
 
-    resp.raise_for_status()
+        print('Loading {}'.format(json_file))
 
-    ner_parsed = json.loads(resp.content)
+        ned_result = json.load(json_file)
 
-    ned_rest_endpoint = ned_rest_endpoint + '/ned?return_full=' + str(return_full).lower()
+    else:
 
-    ned_rest_endpoint += '&threshold={}'.format(threshold) if threshold is not None else ''
+        resp = requests.post(url=ned_rest_endpoint + '/parse', json=ner_result)
 
-    resp = requests.post(url=ned_rest_endpoint, json=ner_parsed, timeout=3600000)
+        resp.raise_for_status()
 
-    resp.raise_for_status()
+        ner_parsed = json.loads(resp.content)
 
-    ned_result = json.loads(resp.content)
+        ned_rest_endpoint = ned_rest_endpoint + '/ned?return_full=' + str(json_file is not None).lower()
+
+        ned_rest_endpoint += '&threshold={}'.format(threshold) if threshold is not None else ''
+
+        resp = requests.post(url=ned_rest_endpoint, json=ner_parsed, timeout=3600000)
+
+        resp.raise_for_status()
+
+        ned_result = json.loads(resp.content)
 
     rids = []
     entity = ""
@@ -320,7 +328,7 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
 
             if ned_rest_endpoint is not None:
 
-                tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, return_full=ned_json_file is not None)
+                tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, json_file=ned_json_file)
 
                 if ned_json_file is not None:
 
