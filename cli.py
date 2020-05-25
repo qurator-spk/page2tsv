@@ -152,7 +152,8 @@ def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
 
         print('Loading {}'.format(json_file))
 
-        ned_result = json.load(json_file)
+        with open(json_file, "r") as fp:
+            ned_result = json.load(fp)
 
     else:
 
@@ -163,8 +164,6 @@ def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
         ner_parsed = json.loads(resp.content)
 
         ned_rest_endpoint = ned_rest_endpoint + '/ned?return_full=' + str(json_file is not None).lower()
-
-        ned_rest_endpoint += '&threshold={}'.format(threshold) if threshold is not None else ''
 
         resp = requests.post(url=ned_rest_endpoint, json=ner_parsed, timeout=3600000)
 
@@ -187,7 +186,10 @@ def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
                 if 'ranking' in ned_result[eid]:
                     ranking = ned_result[eid]['ranking']
 
-                    tsv.loc[rids, 'ID'] = ranking[0][1]['wikidata']
+                    #tsv.loc[rids, 'ID'] = ranking[0][1]['wikidata'] if threshold is None or ranking[0][1]['proba_1'] >= threshold else ''
+
+                    tmp = "|".join([ranking[i][1]['wikidata'] for i in range(len(ranking)) if threshold is None or ranking[i][1]['proba_1'] >= threshold])
+                    tsv.loc[rids, 'ID'] = tmp if len(tmp) > 0 else '-' 
 
             rids = []
             entity = ""
@@ -314,7 +316,8 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, ned_rest
               help="REST endpoint of sbb_ned service. See https://github.com/qurator-spk/sbb_ned for details.")
 @click.option('--ned-json-file', type=str, default=None)
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: proxy is enabled.')
-def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, ned_json_file, noproxy):
+@click.option('--ned-threshold', type=float, default=None)
+def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, ned_json_file, noproxy, ned_threshold):
 
     if noproxy:
         os.environ['no_proxy'] = '*'
@@ -328,13 +331,14 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
 
             if ned_rest_endpoint is not None:
 
-                tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, json_file=ned_json_file)
+                tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, json_file=ned_json_file, threshold=ned_threshold)
 
-                if ned_json_file is not None:
+                if ned_json_file is not None and not os.path.exists(ned_json_file):
 
                     with open(ned_json_file, "w") as fp_json:
                         json.dump(ned_result, fp_json, indent=2, separators=(',', ': '))
 
+        print('Writing to {}...'.format(tsv_out_file))
         tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False)
     except requests.HTTPError as e:
         print(e)
