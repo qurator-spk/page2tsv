@@ -336,7 +336,7 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
             tmp = tsv.copy()
             tmp['sen'] = (tmp['No.'] == 0).cumsum()
 
-            ner_result = [[{'word': row.TOKEN, 'prediction': row['NE-TAG']} for _, row in sen.iterrows]
+            ner_result = [[{'word': row.TOKEN, 'prediction': row['NE-TAG']} for _, row in sen.iterrows()]
                           for _, sen in tmp.groupby('sen')]
         else:
             raise RuntimeError("Either NER rest endpoint or NER-TAG information within tsv_file required.")
