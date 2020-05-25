@@ -329,14 +329,26 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
 
             tsv, ner_result = ner(tsv, ner_rest_endpoint)
 
-            if ned_rest_endpoint is not None:
+        elif os.path.exists(tsv_file):
 
-                tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, json_file=ned_json_file, threshold=ned_threshold)
+            print('Using NER information that is already contained in file: {}'.format(tsv_file))
 
-                if ned_json_file is not None and not os.path.exists(ned_json_file):
+            tmp = tsv.copy()
+            tmp['sen'] = (tmp['No.'] == 0).cumsum()
 
-                    with open(ned_json_file, "w") as fp_json:
-                        json.dump(ned_result, fp_json, indent=2, separators=(',', ': '))
+            ner_result = [[{'word': row.TOKEN, 'prediction': row['NE-TAG']} for _, row in sen.iterrows]
+                          for _, sen in tmp.groupby('sen')]
+        else:
+            raise RuntimeError("Either NER rest endpoint or NER-TAG information within tsv_file required.")
+
+        if ned_rest_endpoint is not None:
+
+            tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, json_file=ned_json_file, threshold=ned_threshold)
+
+            if ned_json_file is not None and not os.path.exists(ned_json_file):
+
+                with open(ned_json_file, "w") as fp_json:
+                    json.dump(ned_result, fp_json, indent=2, separators=(',', ': '))
 
         print('Writing to {}...'.format(tsv_out_file))
         tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False)
