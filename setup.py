@@ -23,7 +23,8 @@ setup(
         "extract-doc-links=cli:extract_document_links",
         "annotate-tsv=cli:annotate_tsv",
         "page2tsv=cli:page2tsv",
-        "find-entities=cli:find_entities"
+        "find-entities=cli:find_entities",
+        "make-page2tsv-commands=cli:make_page2tsv_commands"
       ]
     },
     python_requires='>=3.6.0',

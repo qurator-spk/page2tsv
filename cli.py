@@ -148,7 +148,7 @@ def ner(tsv, ner_rest_endpoint):
 
 def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
 
-    if os.path.exists(json_file):
+    if json_file is not None and os.path.exists(json_file):
 
         print('Loading {}'.format(json_file))
 
@@ -354,3 +354,15 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
         tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False)
     except requests.HTTPError as e:
         print(e)
+
+
+@click.command()
+@click.argument('xls-file', type=click.Path(exists=True), required=True, nargs=1)
+def make_page2tsv_commands(xls_file):
+
+    df = pd.read_excel(xls_file)
+
+    for _, row in df.iterrows():
+        print('page2tsv $(OPTIONS) {}.xml {}.tsv --image-url={} --scale-factor={}'.
+              format(row.Filename, row.Filename, row.iiif_url.replace('/full/full', '/left,top,width,height/full'),
+                     row.scale_factor))
