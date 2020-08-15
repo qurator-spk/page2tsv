@@ -284,6 +284,9 @@ def page2tsv(page_xml_file, tsv_out_file, image_url, ner_rest_endpoint, ned_rest
 
     tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] + out_columns)
 
+    if len(tsv)==0:
+        return
+
     vlinecenter = pd.DataFrame(tsv[['line', 'top']].groupby('line', sort=False).mean().top +
                                (tsv[['line', 'bottom']].groupby('line', sort=False).mean().bottom -
                                 tsv[['line', 'top']].groupby('line', sort=False).mean().top) / 2,
