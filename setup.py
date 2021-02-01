@@ -5,7 +5,7 @@ with open('requirements.txt') as fp:
     install_requires = fp.read()
 
 setup(
-    name="neath",
+    name="tsvtools",
     version="0.0.1",
     author="",
     author_email="qurator@sbb.spk-berlin.de",
@@ -20,9 +20,9 @@ setup(
     install_requires=install_requires,
     entry_points={
       'console_scripts': [
-        "extract-doc-links=cli:extract_document_links",
-        "annotate-tsv=cli:annotate_tsv",
-        "page2tsv=cli:page2tsv",
+        "extract-doc-links=tsvtools.cli:extract_document_links",
+        "annotate-tsv=tsvtools.cli:annotate_tsv",
+        "page2tsv=tsvtools.cli:page2tsv",
         "find-entities=cli:find_entities",
         "make-page2tsv-commands=cli:make_page2tsv_commands"
       ]
