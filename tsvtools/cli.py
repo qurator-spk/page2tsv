@@ -1,3 +1,4 @@
+import numpy as np
 import click
 import pandas as pd
 from io import StringIO
@@ -9,6 +10,7 @@ import json
 from .ned import ned
 from .ner import ner
 from .tsv import read_tsv, write_tsv, extract_doc_links
+from .ocr import get_conf_color
 
 
 @click.command()
@@ -67,13 +69,18 @@ def annotate_tsv(tsv_file, annotated_tsv_file):
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
 @click.option('--scale-factor', type=float, default=0.5685, help='default: 0.5685')
 @click.option('--ned-threshold', type=float, default=None)
+@click.option('--min-confidence', type=float, default=None)
+@click.option('--max-confidence', type=float, default=None)
 def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint, noproxy, scale_factor,
-             ned_threshold):
+             ned_threshold, min_confidence, max_confidence):
 
     if purpose == "NERD":
         out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom']
     elif purpose == "OCR":
         out_columns = ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom']
+
+        if min_confidence is not None and max_confidence is not None:
+            out_columns += ['ocrconf']
     else:
         raise RuntimeError("Unknown purpose.")
 
@@ -89,7 +96,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
         urls = [part['url'] for part in parts]
     else:
-        pd.DataFrame([], columns=out_columns). to_csv(tsv_out_file, sep="\t", quoting=3, index=False)
+        pd.DataFrame([], columns=out_columns).to_csv(tsv_out_file, sep="\t", quoting=3, index=False)
 
     tsv = []
     line_info = []
@@ -107,7 +114,12 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
             left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
 
-            line_info.append((line_number, len(urls), left, right, top, bottom))
+            if min_confidence is not None and max_confidence is not None:
+                conf = np.mean([float(text.attrib['conf']) for text in text_line.findall('./{%s}TextEquiv' % xmlns)])
+            else:
+                conf = np.nan
+
+            line_info.append((line_number, len(urls), left, right, top, bottom, conf))
 
             for word in text_line.findall('./{%s}Word' % xmlns):
 
@@ -128,7 +140,10 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                         tsv.append((rgn_number, line_number, left + (right - left) / 2.0, text,
                                     len(urls), left, right, top, bottom))
 
-    line_info = pd.DataFrame(line_info, columns=['line', 'url_id', 'left', 'right', 'top', 'bottom'])
+    line_info = pd.DataFrame(line_info, columns=['line', 'url_id', 'left', 'right', 'top', 'bottom', 'conf'])
+
+    if min_confidence is not None and max_confidence is not None:
+        line_info['ocrconf'] = line_info.conf.map(lambda x: get_conf_color(x, min_confidence, max_confidence))
 
     tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] + ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom'])
 
