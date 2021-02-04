@@ -100,12 +100,9 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
     tsv = []
     line_info = []
-    line_number = 0
-    rgn_number = 0
-    for region in tree.findall('.//{%s}TextRegion' % xmlns):
-        rgn_number += 1
-        for text_line in region.findall('.//{%s}TextLine' % xmlns):
-            line_number += 1
+    for rgn_number, region in enumerate(tree.findall('.//{%s}TextRegion' % xmlns)):
+
+        for line_number, text_line in enumerate(region.findall('.//{%s}TextLine' % xmlns)):
 
             points = [int(scale_factor * float(pos)) for coords in text_line.findall('./{%s}Coords' % xmlns) for p in
                       coords.attrib['points'].split(' ') for pos in p.split(',')]
@@ -115,7 +112,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
             left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
 
             if min_confidence is not None and max_confidence is not None:
-                conf = np.mean([float(text.attrib['conf']) for text in text_line.findall('./{%s}TextEquiv' % xmlns)])
+                conf = np.max([float(text.attrib['conf']) for text in text_line.findall('./{%s}TextEquiv' % xmlns)])
             else:
                 conf = np.nan
 
