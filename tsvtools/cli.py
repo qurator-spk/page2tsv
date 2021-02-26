@@ -75,9 +75,9 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
              ned_threshold, min_confidence, max_confidence):
 
     if purpose == "NERD":
-        out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom']
+        out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
     elif purpose == "OCR":
-        out_columns = ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom']
+        out_columns = ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
 
         if min_confidence is not None and max_confidence is not None:
             out_columns += ['ocrconf']
@@ -168,6 +168,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
         tsv['NE-TAG'] = 'O'
         tsv['NE-EMB'] = 'O'
         tsv['ID'] = '-'
+        tsv['conf'] = '-'
 
         tsv = tsv.rename(columns={'TEXT': 'TOKEN'})
     elif purpose == 'OCR':
