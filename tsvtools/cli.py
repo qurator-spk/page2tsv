@@ -104,7 +104,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     line_info = []
     for rgn_number, region in enumerate(tree.findall('.//{%s}TextRegion' % xmlns)):
 
-        for line_number, text_line in enumerate(region.findall('.//{%s}TextLine' % xmlns)):
+        for text_line in region.findall('.//{%s}TextLine' % xmlns):
 
             points = [int(scale_factor * float(pos)) for coords in text_line.findall('./{%s}Coords' % xmlns) for p in
                       coords.attrib['points'].split(' ') for pos in p.split(',')]
@@ -118,7 +118,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
             else:
                 conf = np.nan
 
-            line_info.append((line_number, len(urls), left, right, top, bottom, conf))
+            line_info.append((len(urls), left, right, top, bottom, conf))
 
             for word in text_line.findall('./{%s}Word' % xmlns):
 
@@ -138,10 +138,10 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
                     left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
 
-                    tsv.append((rgn_number, line_number, left + (right - left) / 2.0, text,
+                    tsv.append((rgn_number, len(line_info), left + (right - left) / 2.0, text,
                                 len(urls), left, right, top, bottom))
 
-    line_info = pd.DataFrame(line_info, columns=['line', 'url_id', 'left', 'right', 'top', 'bottom', 'conf'])
+    line_info = pd.DataFrame(line_info, columns=['url_id', 'left', 'right', 'top', 'bottom', 'conf'])
 
     if min_confidence is not None and max_confidence is not None:
         line_info['ocrconf'] = line_info.conf.map(lambda x: get_conf_color(x, min_confidence, max_confidence))
@@ -180,7 +180,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
         tsv = pd.DataFrame([(line, " ".join(part.TEXT.to_list())) for line, part in tsv.groupby('line')],
                            columns=['line', 'TEXT'])
 
-        tsv = tsv.merge(line_info, left_on='line', right_on='line')
+        tsv = tsv.merge(line_info, left_on='line', right_index=True)
 
     tsv = tsv[out_columns].reset_index(drop=True)
 
