@@ -138,7 +138,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
                     left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
 
-                    tsv.append((rgn_number, len(line_info), left + (right - left) / 2.0, text,
+                    tsv.append((rgn_number, len(line_info)-1, left + (right - left) / 2.0, text,
                                 len(urls), left, right, top, bottom))
 
     line_info = pd.DataFrame(line_info, columns=['url_id', 'left', 'right', 'top', 'bottom', 'conf'])
