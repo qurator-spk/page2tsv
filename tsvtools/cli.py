@@ -6,6 +6,8 @@ import os
 import xml.etree.ElementTree as ET
 import requests
 import json
+import glob
+import re
 
 from .ned import ned
 from .ner import ner
@@ -245,20 +247,32 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
 
 
 @click.command()
-@click.argument('xls-file', type=click.Path(exists=True), required=True, nargs=1)
+@click.option('--xls-file', type=click.Path(exists=True), default=None,
+              help="Read parameters from xls-file. Expected columns:  Filename, iiif_url, scale_factor.")
+@click.option('--directory', type=click.Path(exists=True), default=None,
+              help="Search directory for PPN**/*.xml files. Extract PPN and file number into image-url.")
 @click.option('--purpose', type=click.Choice(['NERD', 'OCR'], case_sensitive=False), default="NERD",
               help="Purpose of output tsv file. "
                    "\n\nNERD: NER/NED application/ground-truth creation. "
                    "\n\nOCR: OCR application/ground-truth creation. "
                    "\n\ndefault: NERD.")
-def make_page2tsv_commands(xls_file, purpose):
-    """
-    XLS_FILE: Read parameters from xls-file. Expected columns:  Filename, iiif_url, scale_factor.
-    """
+def make_page2tsv_commands(xls_file, directory, purpose):
+    if xls_file is not None:
+        df = pd.read_excel(xls_file)
 
-    df = pd.read_excel(xls_file)
+        for _, row in df.iterrows():
+            print('page2tsv $(OPTIONS) {}.xml {}.tsv --image-url={} --scale-factor={} --purpose={}'.
+                  format(row.Filename, row.Filename, row.iiif_url.replace('/full/full', '/left,top,width,height/full'),
+                         row.scale_factor, purpose))
 
-    for _, row in df.iterrows():
-        print('page2tsv $(OPTIONS) {}.xml {}.tsv --image-url={} --scale-factor={} --purpose={}'.
-              format(row.Filename, row.Filename, row.iiif_url.replace('/full/full', '/left,top,width,height/full'),
-                     row.scale_factor, purpose))
+    elif directory is not None:
+        for file in glob.glob('{}/**/*.xml'.format(directory), recursive=True):
+
+            ma = re.match('(.*/(PPN[0-9]+)/([0-9]+)).xml', file)
+
+            if ma:
+                print('page2tsv {} {}.tsv '
+                      '--image-url=https://content.staatsbibliothek-berlin.de/dc/'
+                      '{}-{}/left,top,width,height/full/1200/default.jpg --scale-factor=1.0'.
+                      format(file, ma.group(1), ma.group(2), ma.group(3)))
+
