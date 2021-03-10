@@ -24,7 +24,7 @@ setup(
         "annotate-tsv=tsvtools.cli:annotate_tsv",
         "page2tsv=tsvtools.cli:page2tsv",
         "find-entities=cli:find_entities",
-        "make-page2tsv-commands=cli:make_page2tsv_commands"
+        "make-page2tsv-commands=tsvtools.cli:make_page2tsv_commands"
       ]
     },
     python_requires='>=3.6.0',

@@ -252,6 +252,9 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
                    "\n\nOCR: OCR application/ground-truth creation. "
                    "\n\ndefault: NERD.")
 def make_page2tsv_commands(xls_file, purpose):
+    """
+    XLS_FILE: Read parameters from xls-file. Expected columns:  Filename, iiif_url, scale_factor.
+    """
 
     df = pd.read_excel(xls_file)
 
