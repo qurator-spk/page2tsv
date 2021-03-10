@@ -125,19 +125,21 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                 for text_equiv in word.findall('./{%s}TextEquiv/{%s}Unicode' % (xmlns, xmlns)):
                     text = text_equiv.text
 
+                    points = []
+
                     for coords in word.findall('./{%s}Coords' % xmlns):
 
                         # transform OCR coordinates using `scale_factor` to derive
                         # correct coordinates for the web presentation image
-                        points = [int(scale_factor * float(pos))
+                        points += [int(scale_factor * float(pos))
                                   for p in coords.attrib['points'].split(' ') for pos in p.split(',')]
 
-                        x_points, y_points = points[0::2], points[1::2]
+                    x_points, y_points = points[0::2], points[1::2]
 
-                        left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
+                    left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
 
-                        tsv.append((rgn_number, line_number, left + (right - left) / 2.0, text,
-                                    len(urls), left, right, top, bottom))
+                    tsv.append((rgn_number, line_number, left + (right - left) / 2.0, text,
+                                len(urls), left, right, top, bottom))
 
     line_info = pd.DataFrame(line_info, columns=['line', 'url_id', 'left', 'right', 'top', 'bottom', 'conf'])
 
