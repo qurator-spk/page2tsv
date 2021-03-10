@@ -275,6 +275,6 @@ def make_page2tsv_commands(xls_file, directory, purpose):
             if ma:
                 print('page2tsv {} {}.tsv '
                       '--image-url=https://content.staatsbibliothek-berlin.de/dc/'
-                      '{}-{:08d}/left,top,width,height/1200,/0/default.jpg --scale-factor=1.0 --purpose={}'.
+                      '{}-{:08d}/left,top,width,height/full/0/default.jpg --scale-factor=1.0 --purpose={}'.
                       format(file, ma.group(1), ma.group(2), int(ma.group(3)), purpose))
 
