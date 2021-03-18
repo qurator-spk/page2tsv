@@ -20,7 +20,7 @@ def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
 
         ner_parsed = json.loads(resp.content)
 
-        ned_rest_endpoint = ned_rest_endpoint + '/ned?return_full=' + str(json_file is not None).lower()
+        ned_rest_endpoint = ned_rest_endpoint + '/ned?return_full=' + str(int(json_file is not None)).lower()
 
         resp = requests.post(url=ned_rest_endpoint, json=ner_parsed, timeout=3600000)
 
