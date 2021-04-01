@@ -1,5 +1,4 @@
-numpy
+ocrd >= 2.23.2
 pandas
-click
 requests
 matplotlib
