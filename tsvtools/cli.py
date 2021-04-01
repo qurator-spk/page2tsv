@@ -3,11 +3,13 @@ import glob
 import re
 import os
 from io import StringIO
+from pathlib import Path
 
 import numpy as np
 import click
 import pandas as pd
 import requests
+from lxml import etree as ET
 
 from ocrd_models.ocrd_page import parse
 from ocrd_utils import bbox_from_points
@@ -177,6 +179,25 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     except requests.HTTPError as e:
         print(e)
 
+@click.command()
+@click.option('--output-filename', '-o', help="Output filename. If omitted, PAGE-XML filename with .corrected.xml extension")
+@click.option('--keep-words', '-k', is_flag=True, help="Keep (out-of-date) Words of TextLines")
+@click.argument('page-file')
+@click.argument('tsv-file')
+def tsv2page(output_filename, keep_words, page_file, tsv_file):
+    if not output_filename:
+        output_filename = Path(page_file).stem + '.corrected.xml'
+    ns = {'pc': 'http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15'}
+    tsv = pd.read_csv(tsv_file, sep='\t', comment='#', quoting=3)
+    tree = ET.parse(page_file)
+    for _, row in tsv.iterrows():
+        el_textline = tree.find(f'//pc:TextLine[@id="{row.line_id}"]', namespaces=ns)
+        el_textline.find('pc:TextEquiv/pc:Unicode', namespaces=ns).text = row.TEXT
+        if not keep_words:
+            for el_word in el_textline.findall('pc:Word', namespaces=ns):
+                el_textline.remove(el_word)
+    with open(output_filename, 'w', encoding='utf-8') as f:
+        f.write(ET.tostring(tree, pretty_print=True).decode('utf-8'))
 
 @click.command()
 @click.argument('tsv-file', type=click.Path(exists=True), required=True, nargs=1)
