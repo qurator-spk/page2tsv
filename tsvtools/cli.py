@@ -81,7 +81,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     if purpose == "NERD":
         out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
     elif purpose == "OCR":
-        out_columns = ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
+        out_columns = ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom', 'conf', 'line_id']
         if min_confidence is not None and max_confidence is not None:
             out_columns += ['ocrconf']
     else:
@@ -110,7 +110,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
             else:
                 conf = np.nan
 
-            line_info.append((len(urls), left, right, top, bottom, conf))
+            line_info.append((len(urls), left, right, top, bottom, conf, text_line.id))
 
             for word in text_line.get_Word():
                 for text_equiv in word.get_TextEquiv():
@@ -119,14 +119,14 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                     left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
 
                     tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
-                                text_equiv.get_Unicode(), len(urls), left, right, top, bottom))
+                                text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
 
-    line_info = pd.DataFrame(line_info, columns=['url_id', 'left', 'right', 'top', 'bottom', 'conf'])
+    line_info = pd.DataFrame(line_info, columns=['url_id', 'left', 'right', 'top', 'bottom', 'conf', 'line_id'])
 
     if min_confidence is not None and max_confidence is not None:
         line_info['ocrconf'] = line_info.conf.map(lambda x: get_conf_color(x, min_confidence, max_confidence))
 
-    tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] + ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom'])
+    tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] + ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom', 'line_id'])
 
     if len(tsv) == 0:
         return
