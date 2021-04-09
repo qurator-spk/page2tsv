@@ -271,7 +271,7 @@ def make_page2tsv_commands(xls_file, directory, purpose):
     elif directory is not None:
         for file in glob.glob('{}/**/*.xml'.format(directory), recursive=True):
 
-            ma = re.match('(.*/(PPN[0-9]+)/.*?([0-9]+).*?).xml', file)
+            ma = re.match('(.*/(PPN[0-9X]+)/.*?([0-9]+).*?).xml', file)
 
             if ma:
                 print('page2tsv {} {}.tsv '
