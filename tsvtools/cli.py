@@ -78,8 +78,9 @@ def annotate_tsv(tsv_file, annotated_tsv_file):
 @click.option('--ned-threshold', type=float, default=None)
 @click.option('--min-confidence', type=float, default=None)
 @click.option('--max-confidence', type=float, default=None)
+@click.option('--ned-priority', type=int, default=1)
 def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint, noproxy, scale_factor,
-             ned_threshold, min_confidence, max_confidence):
+             ned_threshold, min_confidence, max_confidence, ned_priority):
     if purpose == "NERD":
         out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
     elif purpose == "OCR":
@@ -128,7 +129,8 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     if min_confidence is not None and max_confidence is not None:
         line_info['ocrconf'] = line_info.conf.map(lambda x: get_conf_color(x, min_confidence, max_confidence))
 
-    tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] + ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom', 'line_id'])
+    tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] +
+                                    ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom', 'line_id'])
 
     if len(tsv) == 0:
         return
@@ -173,7 +175,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
             if ned_rest_endpoint is not None:
 
-                tsv, _ = ned(tsv, ner_result, ned_rest_endpoint, threshold=ned_threshold)
+                tsv, _ = ned(tsv, ner_result, ned_rest_endpoint, threshold=ned_threshold, priority=ned_priority)
 
         tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
     except requests.HTTPError as e:
