@@ -15,7 +15,7 @@ def read_tsv(tsv_file):
 
 def write_tsv(tsv, urls, tsv_out_file):
 
-    if 'conf' in tsv.columns():
+    if 'conf' in tsv.columns:
         out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
     else:
         out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom']
