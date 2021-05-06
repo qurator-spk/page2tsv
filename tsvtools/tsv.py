@@ -29,7 +29,7 @@ def write_tsv(tsv, urls, tsv_out_file):
 
         for url_id, part in tsv.groupby('url_id'):
             with open(tsv_out_file, 'a') as f:
-                f.write('# ' + urls[url_id] + '\n')
+                f.write('# ' + urls[int(url_id)] + '\n')
 
             part.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
 
