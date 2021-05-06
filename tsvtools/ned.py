@@ -3,7 +3,7 @@ import requests
 import json
 
 
-def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
+def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None, priority=None):
 
     if json_file is not None and os.path.exists(json_file):
 
@@ -21,6 +21,9 @@ def ned(tsv, ner_result, ned_rest_endpoint, json_file=None, threshold=None):
         ner_parsed = json.loads(resp.content)
 
         ned_rest_endpoint = ned_rest_endpoint + '/ned?return_full=' + str(int(json_file is not None)).lower()
+
+        if priority is not None:
+            ned_rest_endpoint += "&priority=" + str(int(priority))
 
         resp = requests.post(url=ned_rest_endpoint, json=ner_parsed, timeout=3600000)
 

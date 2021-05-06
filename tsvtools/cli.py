@@ -199,6 +199,7 @@ def tsv2page(output_filename, keep_words, page_file, tsv_file):
     with open(output_filename, 'w', encoding='utf-8') as f:
         f.write(ET.tostring(tree, pretty_print=True).decode('utf-8'))
 
+
 @click.command()
 @click.argument('tsv-file', type=click.Path(exists=True), required=True, nargs=1)
 @click.argument('tsv-out-file', type=click.Path(), required=True, nargs=1)
@@ -209,7 +210,9 @@ def tsv2page(output_filename, keep_words, page_file, tsv_file):
 @click.option('--ned-json-file', type=str, default=None)
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: proxy is enabled.')
 @click.option('--ned-threshold', type=float, default=None)
-def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, ned_json_file, noproxy, ned_threshold):
+@click.option('--ned-priority', type=int, default=2)
+def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, ned_json_file, noproxy, ned_threshold,
+                  ned_priority):
 
     if noproxy:
         os.environ['no_proxy'] = '*'
@@ -236,7 +239,8 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
 
         if ned_rest_endpoint is not None:
 
-            tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, json_file=ned_json_file, threshold=ned_threshold)
+            tsv, ned_result = ned(tsv, ner_result, ned_rest_endpoint, json_file=ned_json_file, threshold=ned_threshold,
+                                  priority=ned_priority)
 
             if ned_json_file is not None and not os.path.exists(ned_json_file):
 
