@@ -210,7 +210,7 @@ def tsv2page(output_filename, keep_words, page_file, tsv_file):
 @click.option('--ned-json-file', type=str, default=None)
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: proxy is enabled.')
 @click.option('--ned-threshold', type=float, default=None)
-@click.option('--ned-priority', type=int, default=2)
+@click.option('--ned-priority', type=int, default=1)
 def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, ned_json_file, noproxy, ned_threshold,
                   ned_priority):
 
