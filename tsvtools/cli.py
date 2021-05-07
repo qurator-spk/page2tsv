@@ -273,6 +273,8 @@ def make_page2tsv_commands(xls_file, directory, purpose):
         else:
             df = pd.read_excel(xls_file, engine='openpyxl')
 
+        df = df.dropna(how='all')
+
         for _, row in df.iterrows():
             print('page2tsv $(OPTIONS) {}.xml {}.tsv --image-url={} --scale-factor={} --purpose={}'.
                   format(row.Filename, row.Filename, row.iiif_url.replace('/full/full', '/left,top,width,height/full'),
