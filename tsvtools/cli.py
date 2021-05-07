@@ -74,13 +74,13 @@ def annotate_tsv(tsv_file, annotated_tsv_file):
               help="REST endpoint of sbb_ned service. See https://github.com/qurator-spk/sbb_ned for details. "
                    "Only applicable in case of NERD.")
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
-@click.option('--scale-factor', type=float, default=0.5685, help='default: 0.5685')
+@click.option('--scale-factor', type=float, default=1.0, help='default: 1.0')
 @click.option('--ned-threshold', type=float, default=None)
 @click.option('--min-confidence', type=float, default=None)
 @click.option('--max-confidence', type=float, default=None)
 @click.option('--ned-priority', type=int, default=1)
-def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint, noproxy, scale_factor,
-             ned_threshold, min_confidence, max_confidence, ned_priority):
+def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
+             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority):
     if purpose == "NERD":
         out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
     elif purpose == "OCR":
