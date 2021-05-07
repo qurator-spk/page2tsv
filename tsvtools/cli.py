@@ -267,7 +267,11 @@ def find_entities(tsv_file, tsv_out_file, ner_rest_endpoint, ned_rest_endpoint, 
                    "\n\ndefault: NERD.")
 def make_page2tsv_commands(xls_file, directory, purpose):
     if xls_file is not None:
-        df = pd.read_excel(xls_file)
+
+        if xls_file.endswith(".xls"):
+            df = pd.read_excel(xls_file)
+        else:
+            df = pd.read_excel(xls_file, engine='openpyxl')
 
         for _, row in df.iterrows():
             print('page2tsv $(OPTIONS) {}.xml {}.tsv --image-url={} --scale-factor={} --purpose={}'.
