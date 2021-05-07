@@ -106,7 +106,15 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
     for region_idx, region in enumerate(pcgts.get_Page().get_AllRegions(classes=['Text'], order='reading-order')):
         for text_line in region.get_TextLine():
-            left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(text_line.get_Coords().points)]
+
+            points = [int(scale_factor * float(pos)) for coords in text_line.get_Coords() for p in
+                      coords.attrib['points'].split(' ') for pos in p.split(',')]
+
+            x_points, y_points = points[0::2], points[1::2]
+
+            left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
+
+            # left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(text_line.get_Coords().points)]
 
             if min_confidence is not None and max_confidence is not None:
                 conf = np.max([textequiv.conf for textequiv in text_line.get_TextEquiv()])
@@ -119,7 +127,15 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                 for text_equiv in word.get_TextEquiv():
                     # transform OCR coordinates using `scale_factor` to derive
                     # correct coordinates for the web presentation image
-                    left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
+
+                    points = [int(scale_factor * float(pos)) for coords in text_line.get_Coords() for p in
+                              coords.attrib['points'].split(' ') for pos in p.split(',')]
+
+                    x_points, y_points = points[0::2], points[1::2]
+
+                    left, right, top, bottom = min(x_points), max(x_points), min(y_points), max(y_points)
+
+                    # left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
 
                     tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
                                 text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
@@ -181,8 +197,10 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     except requests.HTTPError as e:
         print(e)
 
+
 @click.command()
-@click.option('--output-filename', '-o', help="Output filename. If omitted, PAGE-XML filename with .corrected.xml extension")
+@click.option('--output-filename', '-o', help="Output filename. "
+                                              "If omitted, PAGE-XML filename with .corrected.xml extension")
 @click.option('--keep-words', '-k', is_flag=True, help="Keep (out-of-date) Words of TextLines")
 @click.argument('page-file')
 @click.argument('tsv-file')
