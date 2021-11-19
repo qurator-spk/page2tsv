@@ -116,14 +116,27 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
             line_info.append((len(urls), left, right, top, bottom, conf, text_line.id))
 
-            for word in text_line.get_Word():
-                for text_equiv in word.get_TextEquiv():
+            words = [word for word in text_line.get_Word()]
+
+            if len(words) <= 0:
+                for text_equiv in text_line.get_TextEquiv():
                     # transform OCR coordinates using `scale_factor` to derive
                     # correct coordinates for the web presentation image
-                    left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
+                    left, top, right, bottom = [int(scale_factor * x) for x in
+                                                bbox_from_points(text_line.get_Coords().points)]
 
                     tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
                                 text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
+            else:
+                for word in words:
+
+                    for text_equiv in word.get_TextEquiv():
+                        # transform OCR coordinates using `scale_factor` to derive
+                        # correct coordinates for the web presentation image
+                        left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
+
+                        tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
+                                    text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
 
     line_info = pd.DataFrame(line_info, columns=['url_id', 'left', 'right', 'top', 'bottom', 'conf', 'line_id'])
 
