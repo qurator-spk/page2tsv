@@ -24,7 +24,6 @@ setup(
         "annotate-tsv=tsvtools.cli:annotate_tsv",
         "page2tsv=tsvtools.cli:page2tsv",
         "tsv2page=tsvtools.cli:tsv2page",
-        "find-entities=tsvtools.cli:find_entities",
         "make-page2tsv-commands=tsvtools.cli:make_page2tsv_commands"
       ]
     },
