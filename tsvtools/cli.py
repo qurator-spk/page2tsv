@@ -159,13 +159,6 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     except requests.HTTPError as e:
         print(e)
 
-
-@click.command()
-@click.option('--output-filename', '-o', help="Output filename. "
-                                              "If omitted, PAGE-XML filename with .corrected.xml extension")
-@click.option('--keep-words', '-k', is_flag=True, help="Keep (out-of-date) Words of TextLines")
-@click.argument('page-file')
-@click.argument('tsv-file')
 def tsv2page(output_filename, keep_words, page_file, tsv_file):
     if not output_filename:
         output_filename = Path(page_file).stem + '.corrected.xml'
@@ -181,6 +174,14 @@ def tsv2page(output_filename, keep_words, page_file, tsv_file):
     with open(output_filename, 'w', encoding='utf-8') as f:
         f.write(ET.tostring(tree, pretty_print=True).decode('utf-8'))
 
+@click.command()
+@click.option('--output-filename', '-o', help="Output filename. "
+                                              "If omitted, PAGE-XML filename with .corrected.xml extension")
+@click.option('--keep-words', '-k', is_flag=True, help="Keep (out-of-date) Words of TextLines")
+@click.argument('page-file')
+@click.argument('tsv-file')
+def tsv2page_cli(output_filename, keep_words, page_file, tsv_file):
+    return tsv2page_cli(output_filename, keep_words, page_file, tsv_file)
 
 @click.command()
 @click.option('--xls-file', type=click.Path(exists=True), default=None,

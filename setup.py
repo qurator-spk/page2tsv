@@ -22,8 +22,10 @@ setup(
       'console_scripts': [
         "extract-doc-links=tsvtools.cli:extract_document_links",
         "annotate-tsv=tsvtools.cli:annotate_tsv",
-        "page2tsv=tsvtools.cli:page2tsv",
-        "tsv2page=tsvtools.cli:tsv2page",
+        "ocrd-neat-export=tsvtools.ocrd_cli:export_cli",
+        "ocrd-neat-import=tsvtools.ocrd_cli:import_cli",
+        "page2tsv=tsvtools.cli:page2tsv_cli",
+        "tsv2page=tsvtools.cli:tsv2page_cli",
         "make-page2tsv-commands=tsvtools.cli:make_page2tsv_commands"
       ]
     },
