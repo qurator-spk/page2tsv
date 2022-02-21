@@ -1,0 +1,46 @@
+{
+  "version": "0.0.1",
+  "git_url": "https://github.com/qurator-spk/page2tsv",
+  "tools": {
+    "ocrd-neat-export": {
+      "executable": "ocrd-neat-export",
+      "description": "Convert PAGE-XML to neat-loadable TSV",
+      "categories": [ "Format-Conversion" ],
+      "steps": [ "format-conversion" ],
+      "input_file_grp": ["INPUT"],
+      "output_file_grp": ["OUTPUT"],
+      "parameters": {
+        "iiif_url_template": {
+          "type": "string",
+          "description": "URL template for lookup of images via IIIF based on {{ unique_identifier }}, {{ page_id }}, {{ page_no }} and {{ image_width }}, or {{ PPN }}. 'left', 'top', 'right', 'bottom', 'width', and 'height' are replaced by the neat JS.",
+          "default": "https://content.staatsbibliothek-berlin.de/dc/{{ PPN }}-{{ page_no }}/left,top,width,height/{{ image_width }}/0/default.jpg"
+        },
+        "scale_filegrp": {
+          "type": "string",
+          "description": "If the OCR was run on images with a different resolution thant the 'full' IIIF size, use the images in this file group to scale. Set to empty string to disable",
+          "default": ""
+        },
+        "noproxy": {
+          "type": "boolean",
+          "description": "Disable proxy if set",
+          "default": true
+        }
+      }
+    },
+    "ocrd-neat-import": {
+      "executable": "ocrd-neat-export",
+      "description": "Re-integrate TSV into PAGE-XML",
+      "categories": [ "Format-Conversion" ],
+      "steps": [ "format-conversion" ],
+      "input_file_grp": ["PAGE-GRP,TSV-GRP"],
+      "output_file_grp": ["OUTPUT"],
+      "parameters": {
+        "keep_words": {
+          "type": "boolean",
+          "description": "After updating the line TextEquiv, remove (false) or keep (true) existing and probably inconsistent pc:Word",
+          "default": false
+        }
+      }
+    }
+  }
+}
