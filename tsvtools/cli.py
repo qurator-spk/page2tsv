@@ -13,7 +13,7 @@ from lxml import etree as ET
 from ocrd_models.ocrd_page import parse
 from ocrd_utils import bbox_from_points
 
-from .tsv import read_tsv, write_tsv, extract_doc_links
+from qurator.utils.tsv import read_tsv, write_tsv, extract_doc_links
 from .ocr import get_conf_color
 
 from qurator.utils.ner import ner
