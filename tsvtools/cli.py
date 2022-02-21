@@ -16,6 +16,9 @@ from ocrd_utils import bbox_from_points
 from qurator.utils.tsv import read_tsv, write_tsv, extract_doc_links
 from .ocr import get_conf_color
 
+from qurator.utils.ner import ner
+from qurator.utils.ned import ned
+
 @click.command()
 @click.argument('tsv-file', type=click.Path(exists=True), required=True, nargs=1)
 @click.argument('url-file', type=click.Path(exists=False), required=True, nargs=1)
