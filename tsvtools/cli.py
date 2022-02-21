@@ -13,7 +13,7 @@ from lxml import etree as ET
 from ocrd_models.ocrd_page import parse
 from ocrd_utils import bbox_from_points
 
-from qurator.utils.tsv import read_tsv, write_tsv, extract_doc_links
+from .tsv import read_tsv, write_tsv, extract_doc_links
 from .ocr import get_conf_color
 
 @click.command()
@@ -54,27 +54,6 @@ def annotate_tsv(tsv_file, annotated_tsv_file):
     df.to_csv(annotated_tsv_file, sep="\t", quoting=3, index=False)
 
 
-@click.command()
-@click.argument('page-xml-file', type=click.Path(exists=True), required=True, nargs=1)
-@click.argument('tsv-out-file', type=click.Path(), required=True, nargs=1)
-@click.option('--purpose', type=click.Choice(['NERD', 'OCR'], case_sensitive=False), default="NERD",
-              help="Purpose of output tsv file. "
-                   "\n\nNERD: NER/NED application/ground-truth creation. "
-                   "\n\nOCR: OCR application/ground-truth creation. "
-                   "\n\ndefault: NERD.")
-@click.option('--image-url', type=str, default='http://empty')
-@click.option('--ner-rest-endpoint', type=str, default=None,
-              help="REST endpoint of sbb_ner service. See https://github.com/qurator-spk/sbb_ner for details. "
-                   "Only applicable in case of NERD.")
-@click.option('--ned-rest-endpoint', type=str, default=None,
-              help="REST endpoint of sbb_ned service. See https://github.com/qurator-spk/sbb_ned for details. "
-                   "Only applicable in case of NERD.")
-@click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
-@click.option('--scale-factor', type=float, default=1.0, help='default: 1.0')
-@click.option('--ned-threshold', type=float, default=None)
-@click.option('--min-confidence', type=float, default=None)
-@click.option('--max-confidence', type=float, default=None)
-@click.option('--ned-priority', type=int, default=1)
 def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
              noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority):
     if purpose == "NERD":
@@ -102,7 +81,6 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
     for region_idx, region in enumerate(pcgts.get_Page().get_AllRegions(classes=['Text'], order='reading-order')):
         for text_line in region.get_TextLine():
-
             left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(text_line.get_Coords().points)]
 
             if min_confidence is not None and max_confidence is not None:
@@ -118,19 +96,15 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                 for text_equiv in text_line.get_TextEquiv():
                     # transform OCR coordinates using `scale_factor` to derive
                     # correct coordinates for the web presentation image
-                    left, top, right, bottom = [int(scale_factor * x) for x in
-                                                bbox_from_points(text_line.get_Coords().points)]
-
+                    left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(text_line.get_Coords().points)]
                     tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
                                 text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
             else:
                 for word in words:
-
                     for text_equiv in word.get_TextEquiv():
                         # transform OCR coordinates using `scale_factor` to derive
                         # correct coordinates for the web presentation image
                         left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
-
                         tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
                                     text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
 
@@ -142,12 +116,12 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     tsv = pd.DataFrame(tsv, columns=['rid', 'line', 'hcenter'] +
                                     ['TEXT', 'url_id', 'left', 'right', 'top', 'bottom', 'line_id'])
 
+    # print(tsv)
+    with open(tsv_out_file, 'a') as f:
+        f.write('# ' + image_url + '\n')
+
     if len(tsv) == 0:
         return
-
-    with open(tsv_out_file, 'a') as f:
-
-        f.write('# ' + image_url + '\n')
 
     vlinecenter = pd.DataFrame(tsv[['line', 'top']].groupby('line', sort=False).mean().top +
                                (tsv[['line', 'bottom']].groupby('line', sort=False).mean().bottom -
@@ -155,38 +129,28 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                                columns=['vlinecenter'])
 
     tsv = tsv.merge(vlinecenter, left_on='line', right_index=True)
-
     regions = [region.sort_values(['vlinecenter', 'hcenter']) for rid, region in tsv.groupby('rid', sort=False)]
-
     tsv = pd.concat(regions)
 
     if purpose == 'NERD':
-
         tsv['No.'] = 0
         tsv['NE-TAG'] = 'O'
         tsv['NE-EMB'] = 'O'
         tsv['ID'] = '-'
         tsv['conf'] = '-'
-
         tsv = tsv.rename(columns={'TEXT': 'TOKEN'})
-    elif purpose == 'OCR':
 
+    elif purpose == 'OCR':
         tsv = pd.DataFrame([(line, " ".join(part.TEXT.to_list())) for line, part in tsv.groupby('line')],
                            columns=['line', 'TEXT'])
-
         tsv = tsv.merge(line_info, left_on='line', right_index=True)
-
     tsv = tsv[out_columns].reset_index(drop=True)
 
     try:
         if purpose == 'NERD' and ner_rest_endpoint is not None:
-
             tsv, ner_result = ner(tsv, ner_rest_endpoint)
-
             if ned_rest_endpoint is not None:
-
                 tsv, _ = ned(tsv, ner_result, ned_rest_endpoint, threshold=ned_threshold, priority=ned_priority)
-
         tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
     except requests.HTTPError as e:
         print(e)
@@ -250,3 +214,29 @@ def make_page2tsv_commands(xls_file, directory, purpose):
                       '{}-{:08d}/left,top,width,height/full/0/default.jpg --scale-factor=1.0 --purpose={}'.
                       format(file, ma.group(1), ma.group(2), int(ma.group(3)), purpose))
 
+
+@click.command()
+@click.argument('page-xml-file', type=click.Path(exists=True), required=True, nargs=1)
+@click.argument('tsv-out-file', type=click.Path(), required=True, nargs=1)
+@click.option('--purpose', type=click.Choice(['NERD', 'OCR'], case_sensitive=False), default="NERD",
+              help="Purpose of output tsv file. "
+                   "\n\nNERD: NER/NED application/ground-truth creation. "
+                   "\n\nOCR: OCR application/ground-truth creation. "
+                   "\n\ndefault: NERD.")
+@click.option('--image-url', type=str, default='http://empty')
+@click.option('--ner-rest-endpoint', type=str, default=None,
+              help="REST endpoint of sbb_ner service. See https://github.com/qurator-spk/sbb_ner for details. "
+                   "Only applicable in case of NERD.")
+@click.option('--ned-rest-endpoint', type=str, default=None,
+              help="REST endpoint of sbb_ned service. See https://github.com/qurator-spk/sbb_ned for details. "
+                   "Only applicable in case of NERD.")
+@click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
+@click.option('--scale-factor', type=float, default=1.0, help='default: 1.0')
+@click.option('--ned-threshold', type=float, default=None)
+@click.option('--min-confidence', type=float, default=None)
+@click.option('--max-confidence', type=float, default=None)
+@click.option('--ned-priority', type=int, default=1)
+def page2tsv_cli(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
+             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority):
+    return page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
+             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority)
