@@ -101,12 +101,16 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                                 text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
             else:
                 for word in words:
-                    for text_equiv in word.get_TextEquiv():
-                        # transform OCR coordinates using `scale_factor` to derive
-                        # correct coordinates for the web presentation image
-                        left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
-                        tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
-                                    text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
+                    # XXX TODO make this configurable
+                    textequiv = ''
+                    list_textequivs = word.get_TextEquiv()
+                    if list_textequivs:
+                        textequiv = list_textequivs[0].get_Unicode()
+                    # transform OCR coordinates using `scale_factor` to derive
+                    # correct coordinates for the web presentation image
+                    left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
+                    tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
+                                textequiv, len(urls), left, right, top, bottom, text_line.id))
 
     line_info = pd.DataFrame(line_info, columns=['url_id', 'left', 'right', 'top', 'bottom', 'conf', 'line_id'])
 
