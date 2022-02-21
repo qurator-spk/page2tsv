@@ -1,12 +1,15 @@
 from io import open
+from json import load
 from setuptools import find_packages, setup
 
 with open('requirements.txt') as fp:
     install_requires = fp.read()
+with open('ocrd-tool.json') as fj:
+    version = load(fj)['version']
 
 setup(
     name="tsvtools",
-    version="0.0.1",
+    version=version,
     author="",
     author_email="qurator@sbb.spk-berlin.de",
     description="neath",
