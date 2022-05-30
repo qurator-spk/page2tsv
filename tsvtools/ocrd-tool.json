@@ -12,8 +12,8 @@
       "parameters": {
         "iiif_url_template": {
           "type": "string",
-          "description": "URL template for lookup of images via IIIF based on {{ unique_identifier }}, {{ page_id }}, {{ page_no }} and {{ image_width }}, or {{ PPN }}. 'left', 'top', 'right', 'bottom', 'width', and 'height' are replaced by the neat JS.",
-          "default": "https://content.staatsbibliothek-berlin.de/dc/{{ PPN }}-{{ page_no }}/left,top,width,height/{{ image_width }}/0/default.jpg"
+          "description": "URL template for lookup of images via IIIF based on {{ unique_identifier }}, {{ page_id }}, {{ page_no }} and {{ PPN }}. 'left', 'top', 'right', 'bottom', 'width', and 'height' are replaced by the neat JS.",
+          "default": "https://content.staatsbibliothek-berlin.de/dc/{{ PPN }}-{{ page_no }}/left,top,width,height/full/0/default.jpg"
         },
         "scale_filegrp": {
           "type": "string",

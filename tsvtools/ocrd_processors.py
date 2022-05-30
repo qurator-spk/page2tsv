@@ -7,8 +7,8 @@ import pandas as pd
 from PIL import Image
 
 from ocrd import Processor
-from ocrd_models import OcrdExif
 from ocrd_utils import getLogger, make_file_id, assert_file_grp_cardinality, MIMETYPE_PAGE
+from ocrd_models import OcrdExif
 from ocrd_models.constants import NAMESPACES as NS
 from ocrd_models.ocrd_page import TextEquivType, to_xml
 from ocrd_modelfactory import page_from_file
@@ -32,35 +32,29 @@ class OcrdNeatExportProcessor(Processor):
         assert_file_grp_cardinality(self.input_file_grp, 1)
         assert_file_grp_cardinality(self.output_file_grp, 1)
         iiif_url_template = self.parameter['iiif_url_template']
-        scale_filegrp = self.parameter['scale_filegrp']
         noproxy = self.parameter['noproxy']
+
+        ppn_found = self.workspace.mets._tree.find('//mods:recordIdentifier[@source="gbv-ppn"]', NS)
+        print(ppn_found)
+        if ppn_found is not None:
+            ppn = ppn_found.text
+        else:
+            ppn = ''
         for n, input_file in enumerate(self.input_files):
             page_id = input_file.pageId or input_file.ID
             log.info('Processing: %d / %s of %d', n, page_id, len(list(self.input_files)))
             file_id = make_file_id(input_file, self.output_file_grp)
             pcgts = page_from_file(self.workspace.download_file(input_file))
             page = pcgts.get_Page()
-            scale_factor = 1.0
-            iiif_width = f',{page.imageHeight}'
-            ppn = self.workspace.mets.unique_identifier
-            el_recordIdentifier = self.workspace.mets._tree.getroot().find(".//mods:recordIdentifier[@source='gbv-ppn']", NS)
-            if el_recordIdentifier is not None:
-                ppn = el_recordIdentifier.text
-            if scale_filegrp:
-                scaled_img_ocrd_file = self.workspace.download_file(next(
-                    self.workspace.mets.find_files(fileGrp=scale_filegrp, pageId=page_id)))
-                scaled_img_pil = Image.open(scaled_img_ocrd_file.local_filename)
-                scale_factor = scaled_img_pil.width / page.imageWidth
-                iiif_width = 'full'
+
             iiif_url = iiif_url_template\
                     .replace('{{ unique_identifier }}', self.workspace.mets.unique_identifier)\
                     .replace('{{ PPN }}', ppn)\
                     .replace('{{ page_id }}', page_id)\
-                    .replace('{{ page_no }}', re_sub('[^0-9]', '', page_id))\
-                    .replace('{{ image_width }}', str(iiif_width))
+                    .replace('{{ page_no }}', re_sub('[^0-9]', '', page_id))
             Path(self.output_file_grp).mkdir(exist_ok=True)
             tsv_filepath = Path(self.output_file_grp, file_id + '.tsv')
-            page2tsv(input_file.local_filename, tsv_filepath, 'OCR', iiif_url, None, None, noproxy, scale_factor, None, None, None, 1)
+            page2tsv(input_file.local_filename, tsv_filepath, 'OCR', iiif_url, None, None, noproxy, 1.0, None, None, None, 1)
 
             self.workspace.add_file(
                 ID=file_id,
