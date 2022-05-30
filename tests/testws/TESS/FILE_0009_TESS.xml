@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0009_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:10.636802</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:10.636802</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0009_DEFAULT.jpg" imageWidth="1323" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0009_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0002" orientation="-0.519065988947233" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="135,439 1157,439 1157,1072 135,1072"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="232,439 1157,439 1157,483 232,483"/>
+                <pc:TextEquiv conf="0.816241760253906">
+                    <pc:Unicode>Seitdem die Königin der Wiffenfchaften, die Philofophie,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0001">
+                <pc:Coords points="142,493 1155,493 1155,534 142,534"/>
+                <pc:TextEquiv conf="0.802728576660156">
+                    <pc:Unicode>nicht mehr in Ehren fteht und felbjt das „Volk der Denker“</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0002">
+                <pc:Coords points="142,544 1157,544 1157,589 142,589"/>
+                <pc:TextEquiv conf="0.714635238647461">
+                    <pc:Unicode>ji) von ihr abzuwenden jcheint, feitbem macht fi auf allen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0003">
+                <pc:Coords points="141,598 1157,598 1157,643 141,643"/>
+                <pc:TextEquiv conf="0.848654022216797">
+                    <pc:Unicode>Gebieten des öffentlichen Lebens und bei Erörterung aller</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0004">
+                <pc:Coords points="139,654 1157,654 1157,697 139,697"/>
+                <pc:TextEquiv conf="0.722199630737305">
+                    <pc:Unicode>weltbewegenden Fragen eine Unflarheit und Verworrenheit</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0005">
+                <pc:Coords points="140,706 1155,706 1155,750 140,750"/>
+                <pc:TextEquiv conf="0.868373260498047">
+                    <pc:Unicode>bemerklich, welche nur allzufehr dazu angethan ift, die Lage,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0006">
+                <pc:Coords points="139,760 1154,760 1154,802 139,802"/>
+                <pc:TextEquiv conf="0.825415496826172">
+                    <pc:Unicode>in der die moderne Gejellichaft Jich befindet, zu erjchweren</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0007">
+                <pc:Coords points="138,813 1153,813 1153,857 138,857"/>
+                <pc:TextEquiv conf="0.867702026367188">
+                    <pc:Unicode>und eine befriedigende Löfung der obwaltenden Schwierige</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0008">
+                <pc:Coords points="137,867 835,867 835,912 137,912"/>
+                <pc:TextEquiv conf="0.844734039306641">
+                    <pc:Unicode>feiten noch mehr in die Ferne zu rüden.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0009">
+                <pc:Coords points="226,923 1155,923 1155,967 226,967"/>
+                <pc:TextEquiv conf="0.863444061279297">
+                    <pc:Unicode>Auch heute gelten, wenn gleich unter ganz anderen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0010">
+                <pc:Coords points="136,974 1153,974 1153,1019 136,1019"/>
+                <pc:TextEquiv conf="0.879198760986328">
+                    <pc:Unicode>Verhältnifien die Worte, die Thiers am 4. März 1840</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0011">
+                <pc:Coords points="135,1028 1010,1028 1010,1072 135,1072"/>
+                <pc:TextEquiv conf="0.780193786621094">
+                    <pc:Unicode>im gejeggebenden Körper von Frankreich ausfpradh:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.819460055033366">
+                <pc:Unicode>Seitdem die Königin der Wiffenfchaften, die Philofophie,
+nicht mehr in Ehren fteht und felbjt das „Volk der Denker“
+ji) von ihr abzuwenden jcheint, feitbem macht fi auf allen
+Gebieten des öffentlichen Lebens und bei Erörterung aller
+weltbewegenden Fragen eine Unflarheit und Verworrenheit
+bemerklich, welche nur allzufehr dazu angethan ift, die Lage,
+in der die moderne Gejellichaft Jich befindet, zu erjchweren
+und eine befriedigende Löfung der obwaltenden Schwierige
+feiten noch mehr in die Ferne zu rüden.
+Auch heute gelten, wenn gleich unter ganz anderen
+Verhältnifien die Worte, die Thiers am 4. März 1840
+im gejeggebenden Körper von Frankreich ausfpradh:</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0003" orientation="-0.519065988947233" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="292,1091 1154,1091 1154,1301 292,1301"/>
+            <pc:TextLine id="region0003_line0000">
+                <pc:Coords points="350,1091 1154,1091 1154,1126 350,1126"/>
+                <pc:TextEquiv conf="0.687040176391602">
+                    <pc:Unicode>„I ne suffit pas de l'ordre materiel, il faut aussi</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0001">
+                <pc:Coords points="294,1136 1153,1136 1153,1172 294,1172"/>
+                <pc:TextEquiv conf="0.797708282470703">
+                    <pc:Unicode>de l'ordre moral, c’est-A-dire l'union des esprits</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0002">
+                <pc:Coords points="295,1181 1154,1181 1154,1216 295,1216"/>
+                <pc:TextEquiv conf="0.919372711181641">
+                    <pc:Unicode>vers un but commnn; telle est aujourd’hui la mission</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0003">
+                <pc:Coords points="292,1224 1153,1224 1153,1257 292,1257"/>
+                <pc:TextEquiv conf="0.890750427246094">
+                    <pc:Unicode>imposee au gouvernement. L’heure est venue de la</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0004">
+                <pc:Coords points="293,1269 1069,1269 1069,1301 293,1301"/>
+                <pc:TextEquiv conf="0.818523330688477">
+                    <pc:Unicode>comprendre; nous assistons A un renouvellement.*</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.822678985595703">
+                <pc:Unicode>„I ne suffit pas de l'ordre materiel, il faut aussi
+de l'ordre moral, c’est-A-dire l'union des esprits
+vers un but commnn; telle est aujourd’hui la mission
+imposee au gouvernement. L’heure est venue de la
+comprendre; nous assistons A un renouvellement.*</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0004" orientation="-0.519065988947233" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="127,1319 1152,1319 1152,1794 127,1794"/>
+            <pc:TextLine id="region0004_line0000">
+                <pc:Coords points="222,1319 1152,1319 1152,1365 222,1365"/>
+                <pc:TextEquiv conf="0.893812026977539">
+                    <pc:Unicode>Auch heute Haben wir uns vor Allem Elar zu machen,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0001">
+                <pc:Coords points="132,1372 1150,1372 1150,1419 132,1419"/>
+                <pc:TextEquiv conf="0.702294311523437">
+                    <pc:Unicode>daß wir einer wirthihaftlichen und politischen Neugeftaltung ent-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0002">
+                <pc:Coords points="131,1427 1151,1427 1151,1473 131,1473"/>
+                <pc:TextEquiv conf="0.748894653320312">
+                    <pc:Unicode>gegengehen, zu deren wünfchenswerthem Verlaufe e8 nöthig wäre,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0003">
+                <pc:Coords points="130,1479 1152,1479 1152,1523 130,1523"/>
+                <pc:TextEquiv conf="0.766235275268555">
+                    <pc:Unicode>daß alle wohlmeinenden und tiefer blictenden Geifter fich über</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0004">
+                <pc:Coords points="130,1532 1152,1532 1152,1578 130,1578"/>
+                <pc:TextEquiv conf="0.891498565673828">
+                    <pc:Unicode>ein bejtimmtes Ziel einigen, ebenfo wie über die Wege, um</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0005">
+                <pc:Coords points="131,1584 476,1584 476,1627 131,1627"/>
+                <pc:TextEquiv conf="0.639049301147461">
+                    <pc:Unicode>dafjelbe zu erreichen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0006">
+                <pc:Coords points="218,1638 1147,1638 1147,1685 218,1685"/>
+                <pc:TextEquiv conf="0.679972839355469">
+                    <pc:Unicode>Die Thatjache, daß alle Fortjchritte der Technik</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0007">
+                <pc:Coords points="127,1694 1148,1694 1148,1739 127,1739"/>
+                <pc:TextEquiv conf="0.879997482299805">
+                    <pc:Unicode>nur die Majchinenarbeit und das Wohl der, Majchinen-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0008">
+                <pc:Coords points="128,1746 1146,1746 1146,1794 128,1794"/>
+                <pc:TextEquiv conf="0.713128204345703">
+                    <pc:Unicode>befiger fördern, die menjchlihe Handarbeit dagegen ver=</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.76832029554579">
+                <pc:Unicode>Auch heute Haben wir uns vor Allem Elar zu machen,
+daß wir einer wirthihaftlichen und politischen Neugeftaltung ent-
+gegengehen, zu deren wünfchenswerthem Verlaufe e8 nöthig wäre,
+daß alle wohlmeinenden und tiefer blictenden Geifter fich über
+ein bejtimmtes Ziel einigen, ebenfo wie über die Wege, um
+dafjelbe zu erreichen.
+Die Thatjache, daß alle Fortjchritte der Technik
+nur die Majchinenarbeit und das Wohl der, Majchinen-
+befiger fördern, die menjchlihe Handarbeit dagegen ver=</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="-0.519065988947233">
+            <pc:Coords points="0,0 74,0 74,32 0,32"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0001" orientation="-0.519065988947233">
+            <pc:Coords points="0,1897 79,1897 79,1959 0,1959"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0014_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:25.456072</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:25.456072</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0014_DEFAULT.jpg" imageWidth="1267" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0014_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+                <pc:RegionRefIndexed index="5" regionRef="region0005"/>
+                <pc:RegionRefIndexed index="6" regionRef="region0006"/>
+                <pc:RegionRefIndexed index="7" regionRef="region0007"/>
+                <pc:RegionRefIndexed index="8" regionRef="region0008"/>
+                <pc:RegionRefIndexed index="9" regionRef="region0009"/>
+                <pc:RegionRefIndexed index="10" regionRef="region0010"/>
+                <pc:RegionRefIndexed index="11" regionRef="region0011"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0001" orientation="0.092702348973717" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="77,78 1138,78 1138,590 77,590"/>
+            <pc:TextLine id="region0001_line0000">
+                <pc:Coords points="118,78 929,78 929,100 118,100"/>
+                <pc:TextEquiv conf="0.">
+                    <pc:Unicode>Dt e</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0001">
+                <pc:Coords points="117,112 1133,112 1133,162 117,162"/>
+                <pc:TextEquiv conf="0.836929626464844">
+                    <pc:Unicode>Erfolg begleitet fein, als die ganze politiche Weltlage dar:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0002">
+                <pc:Coords points="117,163 1136,163 1136,213 117,213"/>
+                <pc:TextEquiv conf="0.649489669799805">
+                    <pc:Unicode>tut, daß der Schwerpunkt der auswärtigen Bolitit</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0003">
+                <pc:Coords points="77,216 1136,216 1136,288 77,288"/>
+                <pc:TextEquiv conf="0.600380249023437">
+                    <pc:Unicode>für die europäifchen Großmächte jegt fait ausschliehlich</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0004">
+                <pc:Coords points="118,276 1136,276 1136,321 118,321"/>
+                <pc:TextEquiv conf="0.786668548583984">
+                    <pc:Unicode>in den Golonialfragen oder wenigftens in außer:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0005">
+                <pc:Coords points="119,329 1138,329 1138,395 119,395"/>
+                <pc:TextEquiv conf="0.886134567260742">
+                    <pc:Unicode>euro päifchen Fragen liegt und daß in all diefen Fragen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0006">
+                <pc:Coords points="199,384 1138,384 1138,429 199,429"/>
+                <pc:TextEquiv conf="0.684476013183594">
+                    <pc:Unicode>Bufammengehen aller civilijirten Nationen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0007">
+                <pc:Coords points="188,437 1136,437 1136,481 188,481"/>
+                <pc:TextEquiv conf="0.704812927246094">
+                    <pc:Unicode>Interefjen der Einzelnen derjelben, wie der Gefammtheit</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0008">
+                <pc:Coords points="174,493 616,493 616,537 174,537"/>
+                <pc:TextEquiv conf="0.435222282409668">
+                    <pc:Unicode>- Förderlihiten fein dürfte.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0009">
+                <pc:Coords points="173,543 1138,543 1138,590 173,590"/>
+                <pc:TextEquiv conf="0.675394897460938">
+                    <pc:Unicode>- Wenn die Regierungen aus eigenem Antriebe fich richt</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.72595087814331">
+                <pc:Unicode>Dt e
+Erfolg begleitet fein, als die ganze politiche Weltlage dar:
+tut, daß der Schwerpunkt der auswärtigen Bolitit
+für die europäifchen Großmächte jegt fait ausschliehlich
+in den Golonialfragen oder wenigftens in außer:
+euro päifchen Fragen liegt und daß in all diefen Fragen
+Bufammengehen aller civilijirten Nationen
+Interefjen der Einzelnen derjelben, wie der Gefammtheit
+- Förderlihiten fein dürfte.
+- Wenn die Regierungen aus eigenem Antriebe fich richt</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0002" orientation="0.092702348973717" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="128,651 1136,651 1136,748 128,748"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="128,651 1136,651 1136,696 128,696"/>
+                <pc:TextEquiv conf="0.721112442016602">
+                    <pc:Unicode>und Fauftrechtspolitif trennen können, jo werden Die</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0001">
+                <pc:Coords points="159,701 1136,701 1136,748 159,748"/>
+                <pc:TextEquiv conf="0.638527374267578">
+                    <pc:Unicode>ölfer felbft endlich den Auf nach Errichtung eines Welt-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.67981990814209">
+                <pc:Unicode>und Fauftrechtspolitif trennen können, jo werden Die
+ölfer felbft endlich den Auf nach Errichtung eines Welt-</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0003" orientation="0.092702348973717" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="119,810 1139,810 1139,1070 119,1070"/>
+            <pc:TextLine id="region0003_line0000">
+                <pc:Coords points="156,810 1134,810 1134,856 156,856"/>
+                <pc:TextEquiv conf="0.73512451171875">
+                    <pc:Unicode>taatenbunde, innerhalb deffen die eigenmächtige Selbit-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0001">
+                <pc:Coords points="119,865 1135,865 1135,910 119,910"/>
+                <pc:TextEquiv conf="0.853497772216797">
+                    <pc:Unicode>hilfe auf dem Wege des Krieges unbedingt ausge-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0002">
+                <pc:Coords points="142,917 1135,917 1135,963 142,963"/>
+                <pc:TextEquiv conf="0.75463493347168">
+                    <pc:Unicode>Hlojjen und duch eine obligatorifche ordentliche</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0003">
+                <pc:Coords points="149,971 1137,971 1137,1019 149,1019"/>
+                <pc:TextEquiv conf="0.762709274291992">
+                    <pc:Unicode>tiedensgerichtsbarfeit erjegt würde. Erjt wenn</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0004">
+                <pc:Coords points="160,1024 1139,1024 1139,1070 160,1070"/>
+                <pc:TextEquiv conf="0.741442337036133">
+                    <pc:Unicode>efer Gedanfe feine Verwirklihung gefunden haben</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.76948176574707">
+                <pc:Unicode>taatenbunde, innerhalb deffen die eigenmächtige Selbit-
+hilfe auf dem Wege des Krieges unbedingt ausge-
+Hlojjen und duch eine obligatorifche ordentliche
+tiedensgerichtsbarfeit erjegt würde. Erjt wenn
+efer Gedanfe feine Verwirklihung gefunden haben</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0004" orientation="0.092702348973717" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="111,1131 1142,1131 1142,1763 111,1763"/>
+            <pc:TextLine id="region0004_line0000">
+                <pc:Coords points="157,1131 1138,1131 1138,1175 157,1175"/>
+                <pc:TextEquiv conf="0.68032958984375">
+                    <pc:Unicode>rt Eleinen Mittel zur Befeitigung der Wirrniffe und</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0001">
+                <pc:Coords points="111,1182 1139,1182 1139,1232 111,1232"/>
+                <pc:TextEquiv conf="0.768064880371094">
+                    <pc:Unicode>Nothlage, unter denen die Gefellichaft leidet, herauskommen,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0002">
+                <pc:Coords points="178,1235 1142,1235 1142,1281 178,1281"/>
+                <pc:TextEquiv conf="0.742951583862305">
+                    <pc:Unicode>erjt dann wird die gefammte Menfchheit erleichtert</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0003">
+                <pc:Coords points="114,1283 1141,1283 1141,1353 114,1353"/>
+                <pc:TextEquiv conf="0.825357513427734">
+                    <pc:Unicode>‚aufathmen, um mit vereinter ungeahnter Kraft unter</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0004">
+                <pc:Coords points="151,1342 1140,1342 1140,1392 151,1392"/>
+                <pc:TextEquiv conf="0.767454299926758">
+                    <pc:Unicode>em Banner des Welt-Staatenbundes fortan ungeftört</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0005">
+                <pc:Coords points="112,1393 1142,1393 1142,1455 112,1455"/>
+                <pc:TextEquiv conf="0.625146064758301">
+                    <pc:Unicode>Ähren böchjften Zielen zuzuftreben. Dann erft wird ber</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0006">
+                <pc:Coords points="164,1450 1141,1450 1141,1495 164,1495"/>
+                <pc:TextEquiv conf="0.838378753662109">
+                    <pc:Unicode>eltfrieden dauernd begründet fein und zur wahren</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0007">
+                <pc:Coords points="153,1504 583,1504 583,1551 153,1551"/>
+                <pc:TextEquiv conf="0.872691650390625">
+                    <pc:Unicode>Belt- Wohlfahrt führen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0008">
+                <pc:Coords points="154,1555 1140,1555 1140,1600 154,1600"/>
+                <pc:TextEquiv conf="0.611202125549316">
+                    <pc:Unicode>An realpolitiiden Anfnüpfungspunften zur</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0009">
+                <pc:Coords points="113,1592 1142,1592 1142,1660 113,1660"/>
+                <pc:TextEquiv conf="0.737401275634766">
+                    <pc:Unicode>Verwirklichung des Welt-Staatenbundes fehlt es fchon heute</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0010">
+                <pc:Coords points="126,1662 1141,1662 1141,1731 126,1731"/>
+                <pc:TextEquiv conf="0.751554107666016">
+                    <pc:Unicode>feineswegs. ‚Die verfchiedenen Bündniffe, denen wir gegen:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0011">
+                <pc:Coords points="127,1716 1141,1716 1141,1763 127,1763"/>
+                <pc:TextEquiv conf="0.823190307617187">
+                    <pc:Unicode>wärtig in Europa begegnen, wie der deutjchsitalienijch-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.75364351272583">
+                <pc:Unicode>rt Eleinen Mittel zur Befeitigung der Wirrniffe und
+Nothlage, unter denen die Gefellichaft leidet, herauskommen,
+erjt dann wird die gefammte Menfchheit erleichtert
+‚aufathmen, um mit vereinter ungeahnter Kraft unter
+em Banner des Welt-Staatenbundes fortan ungeftört
+Ähren böchjften Zielen zuzuftreben. Dann erft wird ber
+eltfrieden dauernd begründet fein und zur wahren
+Belt- Wohlfahrt führen.
+An realpolitiiden Anfnüpfungspunften zur
+Verwirklichung des Welt-Staatenbundes fehlt es fchon heute
+feineswegs. ‚Die verfchiedenen Bündniffe, denen wir gegen:
+wärtig in Europa begegnen, wie der deutjchsitalienijch-</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0006" orientation="0.092702348973717" type="floating" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="117,597 1170,597 1170,644 117,644"/>
+            <pc:TextLine id="region0006_line0000">
+                <pc:Coords points="117,597 1170,597 1170,644 117,644"/>
+                <pc:TextEquiv conf="0.747443923950195">
+                    <pc:Unicode>jo leicht von der hergebrachten militariftischen Selbjthilfe-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.747443923950195">
+                <pc:Unicode>jo leicht von der hergebrachten militariftischen Selbjthilfe-</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0007" orientation="0.092702348973717" type="floating" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="115,745 1173,745 1173,814 115,814"/>
+            <pc:TextLine id="region0007_line0000">
+                <pc:Coords points="115,745 1173,745 1173,814 115,814"/>
+                <pc:TextEquiv conf="0.655888366699219">
+                    <pc:Unicode>Staatenbundes erheben müflen, — nad eimem Welt:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.655888366699219">
+                <pc:Unicode>Staatenbundes erheben müflen, — nad eimem Welt:</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0008" orientation="0.092702348973717" type="floating" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="154,1060 1195,1060 1195,1124 154,1124"/>
+            <pc:TextLine id="region0008_line0000">
+                <pc:Coords points="154,1060 1195,1060 1195,1124 154,1124"/>
+                <pc:TextEquiv conf="0.826826553344727">
+                    <pc:Unicode>ird, werden wir aus der Praris der Nothbehelfe und |</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.826826553344727">
+                <pc:Unicode>ird, werden wir aus der Praris der Nothbehelfe und |</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0010" orientation="0.092702348973717" type="floating" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="126,1753 1166,1753 1166,1820 126,1820"/>
+            <pc:TextLine id="region0010_line0000">
+                <pc:Coords points="126,1753 1166,1753 1166,1820 126,1820"/>
+                <pc:TextEquiv conf="0.55962532043457">
+                    <pc:Unicode>öfterreichifche Dreibund, das Bündniß zwifchen Franft»</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.55962532043457">
+                <pc:Unicode>öfterreichifche Dreibund, das Bündniß zwifchen Franft»</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="0.092702348973717">
+            <pc:Coords points="0,4 354,4 354,1844 0,1844"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0005" orientation="0.092702348973717">
+            <pc:Coords points="141,1281 184,1281 184,1284 141,1284"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0009" orientation="0.092702348973717">
+            <pc:Coords points="1128,1594 1267,1594 1267,1959 1128,1959"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0011" orientation="0.092702348973717">
+            <pc:Coords points="1077,0 1267,0 1267,92 1077,92"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

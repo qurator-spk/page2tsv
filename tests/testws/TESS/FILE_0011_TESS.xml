@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0011_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:16.385870</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:16.385870</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0011_DEFAULT.jpg" imageWidth="1323" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0011_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+                <pc:RegionRefIndexed index="5" regionRef="region0005"/>
+                <pc:RegionRefIndexed index="6" regionRef="region0006"/>
+                <pc:RegionRefIndexed index="7" regionRef="region0007"/>
+                <pc:RegionRefIndexed index="8" regionRef="region0008"/>
+                <pc:RegionRefIndexed index="9" regionRef="region0009"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0002" orientation="0.409581391605229" type="floating" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="147,1710 1245,1710 1245,1810 147,1810"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="147,1710 1245,1710 1245,1755 147,1755"/>
+                <pc:TextEquiv conf="0.746598510742188">
+                    <pc:Unicode>. nur eine Sonderfrage für die Verwirklichung des Nechtes</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0001">
+                <pc:Coords points="172,1764 1204,1764 1204,1810 172,1810"/>
+                <pc:TextEquiv conf="0.658690338134766">
+                    <pc:Unicode>auf Arbeit. In der Verwirklichung diefes Rechtes ift allein</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.702644424438477">
+                <pc:Unicode>. nur eine Sonderfrage für die Verwirklichung des Nechtes
+auf Arbeit. In der Verwirklichung diefes Rechtes ift allein</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0004" orientation="0.409581391605229" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="168,97 1232,97 1232,306 168,306"/>
+            <pc:TextLine id="region0004_line0000">
+                <pc:Coords points="168,97 1232,97 1232,144 168,144"/>
+                <pc:TextEquiv conf="0.809381637573242">
+                    <pc:Unicode>man aufhören, mit den Mafchinen und ihren Groß:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0001">
+                <pc:Coords points="170,153 1192,153 1192,198 170,198"/>
+                <pc:TextEquiv conf="0.878299026489258">
+                    <pc:Unicode>befigern mehr Nüdficht zu haben, als mit den Millionen,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0002">
+                <pc:Coords points="170,208 1193,208 1193,254 170,254"/>
+                <pc:TextEquiv conf="0.745186157226562">
+                    <pc:Unicode>die durch diefelben brodlos werden. Es jei damit nicht</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0003">
+                <pc:Coords points="170,256 1193,256 1193,306 170,306"/>
+                <pc:TextEquiv conf="0.62246826171875">
+                    <pc:Unicode>gefagt, dak die Mafchinen abgefchafft werden follen. Wohl</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.763833770751953">
+                <pc:Unicode>man aufhören, mit den Mafchinen und ihren Groß:
+befigern mehr Nüdficht zu haben, als mit den Millionen,
+die durch diefelben brodlos werden. Es jei damit nicht
+gefagt, dak die Mafchinen abgefchafft werden follen. Wohl</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0005" orientation="0.409581391605229" type="floating" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="170,308 1261,308 1261,358 170,358"/>
+            <pc:TextLine id="region0005_line0000">
+                <pc:Coords points="170,308 1261,308 1261,358 170,358"/>
+                <pc:TextEquiv conf="0.727274017333984">
+                    <pc:Unicode>aber wird man fich dazu entfehliegen müflen, die Niefene</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.727274017333984">
+                <pc:Unicode>aber wird man fich dazu entfehliegen müflen, die Niefene</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0006" orientation="0.409581391605229" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="170,368 1225,368 1225,1454 170,1454"/>
+            <pc:TextLine id="region0006_line0000">
+                <pc:Coords points="170,368 1191,368 1191,410 170,410"/>
+                <pc:TextEquiv conf="0.625027961730957">
+                    <pc:Unicode>majdinen der Großinduftrie entiprehend zu be=</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0001">
+                <pc:Coords points="171,422 1207,422 1207,472 171,472"/>
+                <pc:TextEquiv conf="0.851843414306641">
+                    <pc:Unicode>jteuern, um aus dem Ertrage diejer Steuer Arbeits</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0002">
+                <pc:Coords points="171,475 1224,475 1224,520 171,520"/>
+                <pc:TextEquiv conf="0.830707626342773">
+                    <pc:Unicode>gelegenheit für Arbeitslofe zu Schaffen. Außerdem</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0003">
+                <pc:Coords points="171,528 1194,528 1194,571 171,571"/>
+                <pc:TextEquiv conf="0.830154266357422">
+                    <pc:Unicode>muß man fich endlich entjchliegen, daß Necht auf Arbeit</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0004">
+                <pc:Coords points="172,582 1200,582 1200,624 172,624"/>
+                <pc:TextEquiv conf="0.781175994873047">
+                    <pc:Unicode>Ihlehtweg anzuerkennen und die „heilige Scheu“, die</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0005">
+                <pc:Coords points="173,634 1216,634 1216,677 173,677"/>
+                <pc:TextEquiv conf="0.807301940917969">
+                    <pc:Unicode>man vor diefer Anerkennung hat, völlig fahren zu lafjen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0006">
+                <pc:Coords points="174,687 1210,687 1210,729 174,729"/>
+                <pc:TextEquiv conf="0.869447021484375">
+                    <pc:Unicode>Nur jo wird die Induftrie aufhören, der „Saturn“ der</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0007">
+                <pc:Coords points="175,740 1209,740 1209,783 175,783"/>
+                <pc:TextEquiv conf="0.820411529541016">
+                    <pc:Unicode>Arbeit zu jein, der feine Kinder verfchlingt und nur von</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0008">
+                <pc:Coords points="176,795 456,795 456,837 176,837"/>
+                <pc:TextEquiv conf="0.925005569458008">
+                    <pc:Unicode>ihrem Tode lebt.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0009">
+                <pc:Coords points="265,847 1206,847 1206,892 265,892"/>
+                <pc:TextEquiv conf="0.808720397949219">
+                    <pc:Unicode>Auch vor dem Dlttel, den Arbeitslofen Grund</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0010">
+                <pc:Coords points="176,902 1219,902 1219,951 176,951"/>
+                <pc:TextEquiv conf="0.924497985839844">
+                    <pc:Unicode>und Boden und das Nöthige zu ihrer Bebauung zu</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0011">
+                <pc:Coords points="176,955 1225,955 1225,1004 176,1004"/>
+                <pc:TextEquiv conf="0.841640014648438">
+                    <pc:Unicode>gewähren, darf man nicht zurücichreden, wenn es gilt, die</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0012">
+                <pc:Coords points="177,1008 1198,1008 1198,1053 177,1053"/>
+                <pc:TextEquiv conf="0.80789306640625">
+                    <pc:Unicode>Sejellihaft vor einer Krifis zu bewahren, gegen die felbjt</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0013">
+                <pc:Coords points="177,1062 1225,1062 1225,1106 177,1106"/>
+                <pc:TextEquiv conf="0.797294006347656">
+                    <pc:Unicode>die Militärgewalt feinen ficheren Schug mehr gewähren</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0014">
+                <pc:Coords points="177,1115 1202,1115 1202,1163 177,1163"/>
+                <pc:TextEquiv conf="0.502019309997559">
+                    <pc:Unicode>würde. :</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0015">
+                <pc:Coords points="268,1169 1216,1169 1216,1213 268,1213"/>
+                <pc:TextEquiv conf="0.731816864013672">
+                    <pc:Unicode>Louis Napoleon jprad) ich feiner Zeit dafür aus, daß</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0016">
+                <pc:Coords points="179,1221 1219,1221 1219,1264 179,1264"/>
+                <pc:TextEquiv conf="0.892089004516602">
+                    <pc:Unicode>man den Arbeiter und fein Intereffe mehr an Grund und.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0017">
+                <pc:Coords points="181,1275 1200,1275 1200,1325 181,1325"/>
+                <pc:TextEquiv conf="0.852090377807617">
+                    <pc:Unicode>Boden fejleln jollte. Er that dies mit folgenden Worten:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0018">
+                <pc:Coords points="398,1326 1225,1326 1225,1362 398,1362"/>
+                <pc:TextEquiv conf="0.881947784423828">
+                    <pc:Unicode>„La classe ouvriere ne possede rien, il faut la rendre</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0019">
+                <pc:Coords points="343,1373 1209,1373 1209,1408 343,1408"/>
+                <pc:TextEquiv conf="0.876179122924805">
+                    <pc:Unicode>proprietaire... Elle est comme un peuple dilotes</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0006_line0020">
+                <pc:Coords points="342,1417 1202,1417 1202,1454 342,1454"/>
+                <pc:TextEquiv conf="0.822846374511719">
+                    <pc:Unicode>au milieu d’un penuple de sybarites. Il faut lui</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.81333855401902">
+                <pc:Unicode>majdinen der Großinduftrie entiprehend zu be=
+jteuern, um aus dem Ertrage diejer Steuer Arbeits
+gelegenheit für Arbeitslofe zu Schaffen. Außerdem
+muß man fich endlich entjchliegen, daß Necht auf Arbeit
+Ihlehtweg anzuerkennen und die „heilige Scheu“, die
+man vor diefer Anerkennung hat, völlig fahren zu lafjen.
+Nur jo wird die Induftrie aufhören, der „Saturn“ der
+Arbeit zu jein, der feine Kinder verfchlingt und nur von
+ihrem Tode lebt.
+Auch vor dem Dlttel, den Arbeitslofen Grund
+und Boden und das Nöthige zu ihrer Bebauung zu
+gewähren, darf man nicht zurücichreden, wenn es gilt, die
+Sejellihaft vor einer Krifis zu bewahren, gegen die felbjt
+die Militärgewalt feinen ficheren Schug mehr gewähren
+würde. :
+Louis Napoleon jprad) ich feiner Zeit dafür aus, daß
+man den Arbeiter und fein Intereffe mehr an Grund und.
+Boden fejleln jollte. Er that dies mit folgenden Worten:
+„La classe ouvriere ne possede rien, il faut la rendre
+proprietaire... Elle est comme un peuple dilotes
+au milieu d’un penuple de sybarites. Il faut lui</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0007" orientation="0.409581391605229" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="343,1461 1225,1461 1225,1533 343,1533"/>
+            <pc:TextLine id="region0007_line0000">
+                <pc:Coords points="343,1461 1225,1461 1225,1496 343,1496"/>
+                <pc:TextEquiv conf="0.849987640380859">
+                    <pc:Unicode>donner une place dans la societe et attacher ses interäts</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0007_line0001">
+                <pc:Coords points="343,1507 581,1507 581,1533 343,1533"/>
+                <pc:TextEquiv conf="0.640605392456055">
+                    <pc:Unicode>ü ceux du sol.“</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.745296516418457">
+                <pc:Unicode>donner une place dans la societe et attacher ses interäts
+ü ceux du sol.“</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0008" orientation="0.409581391605229" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="184,1550 1254,1550 1254,1702 184,1702"/>
+            <pc:TextLine id="region0008_line0000">
+                <pc:Coords points="273,1550 1225,1550 1225,1593 273,1593"/>
+                <pc:TextEquiv conf="0.815174407958984">
+                    <pc:Unicode>Wenn mın auch bei der Organifation der Arbeit und</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0008_line0001">
+                <pc:Coords points="184,1604 1254,1604 1254,1651 184,1651"/>
+                <pc:TextEquiv conf="0.775469207763672">
+                    <pc:Unicode>der Befigverhältniffe für die Arbeitslofen die Grund: und</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0008_line0002">
+                <pc:Coords points="184,1657 1253,1657 1253,1702 184,1702"/>
+                <pc:TextEquiv conf="0.791090774536133">
+                    <pc:Unicode>Bodenfrage mit in Betracht fommen dürfte, jo ift dies doch</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.793911463419596">
+                <pc:Unicode>Wenn mın auch bei der Organifation der Arbeit und
+der Befigverhältniffe für die Arbeitslofen die Grund: und
+Bodenfrage mit in Betracht fommen dürfte, jo ift dies doch</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="0.409581391605229">
+            <pc:Coords points="0,944 33,944 33,1275 0,1275"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0001" orientation="0.409581391605229">
+            <pc:Coords points="0,51 75,51 75,434 0,434"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0003" orientation="0.409581391605229">
+            <pc:Coords points="0,1277 133,1277 133,1959 0,1959"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0009" orientation="0.409581391605229">
+            <pc:Coords points="1193,25 1323,25 1323,1959 1193,1959"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

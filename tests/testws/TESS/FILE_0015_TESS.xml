@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0015_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:28.585289</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:28.585289</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0015_DEFAULT.jpg" imageWidth="1294" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0015_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+                <pc:RegionRefIndexed index="5" regionRef="region0005"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0005" orientation="0.309133107854734" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="136,94 1176,94 1176,1486 136,1486"/>
+            <pc:TextLine id="region0005_line0000">
+                <pc:Coords points="136,94 1131,94 1131,139 136,139"/>
+                <pc:TextEquiv conf="0.716886444091797">
+                    <pc:Unicode>reih, Rußland und Deutfhland in Betreff der oft</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0001">
+                <pc:Coords points="138,141 1141,141 1141,194 138,194"/>
+                <pc:TextEquiv conf="0.661394653320313">
+                    <pc:Unicode>afiatischen Angelegenheiten und das englifh-frangöfifeh</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0002">
+                <pc:Coords points="136,199 1100,199 1100,247 136,247"/>
+                <pc:TextEquiv conf="0.662912063598633">
+                    <pc:Unicode>ruffiiche Bündnik in Betreff der armenifhen Frage</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0003">
+                <pc:Coords points="140,256 1145,256 1145,305 140,305"/>
+                <pc:TextEquiv conf="0.781285171508789">
+                    <pc:Unicode>al! diefe Bündniffe können als Voritufen für ben Welt:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0004">
+                <pc:Coords points="137,306 1130,306 1130,355 137,355"/>
+                <pc:TextEquiv conf="0.876187438964844">
+                    <pc:Unicode>Staatenbuud angefehen werden und e3 bedürfte nur d</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0005">
+                <pc:Coords points="140,364 1100,364 1100,409 140,409"/>
+                <pc:TextEquiv conf="0.57072135925293">
+                    <pc:Unicode>Initiative Nußlands, Franfreihs und Deutfchlan!</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0006">
+                <pc:Coords points="142,418 1081,418 1081,460 142,460"/>
+                <pc:TextEquiv conf="0.849889984130859">
+                    <pc:Unicode>um diefe Bündniffe unter Beitritt der amerifanif</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0007">
+                <pc:Coords points="141,470 1176,470 1176,520 141,520"/>
+                <pc:TextEquiv conf="0.790730895996094">
+                    <pc:Unicode>Staaten, fowie Japans und Chinas zu dem Welt</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0008">
+                <pc:Coords points="141,520 1173,520 1173,569 141,569"/>
+                <pc:TextEquiv conf="0.810726013183594">
+                    <pc:Unicode>Staatenbund zu erweitern. Kein Staat hätte Anlaß,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0009">
+                <pc:Coords points="145,579 1128,579 1128,626 145,626"/>
+                <pc:TextEquiv conf="0.870832061767578">
+                    <pc:Unicode>fidh gegen den Beitritt zu fträuben, denn jeber von ihn</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0010">
+                <pc:Coords points="143,633 1094,633 1094,675 143,675"/>
+                <pc:TextEquiv conf="0.683397216796875">
+                    <pc:Unicode>würde feinen höchiten Wortheil dabei finden. Es wi</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0011">
+                <pc:Coords points="145,687 1097,687 1097,730 145,730"/>
+                <pc:TextEquiv conf="0.851327590942383">
+                    <pc:Unicode>dann feine anderen Madhtfragen mehr geben, als</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0012">
+                <pc:Coords points="145,725 1143,725 1143,793 145,793"/>
+                <pc:TextEquiv conf="0.722705841064453">
+                    <pc:Unicode>wirthbihaftlihen und intellectuellen. Von größte</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0013">
+                <pc:Coords points="146,794 1097,794 1097,840 146,840"/>
+                <pc:TextEquiv conf="0.713457717895508">
+                    <pc:Unicode>Wichtigkeit ift es übrigens, daß -das Zuftandefommen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0014">
+                <pc:Coords points="147,843 1134,843 1134,894 147,894"/>
+                <pc:TextEquiv conf="0.621604080200195">
+                    <pc:Unicode>MWelt-Staatenbundes möglichit bald bemerfitelligt werd</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0015">
+                <pc:Coords points="148,897 1138,897 1138,944 148,944"/>
+                <pc:TextEquiv conf="0.823231887817383">
+                    <pc:Unicode>Denn wenn erft China nad dem Mufter Japans fi</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0016">
+                <pc:Coords points="149,951 1102,951 1102,1001 149,1001"/>
+                <pc:TextEquiv conf="0.766527252197266">
+                    <pc:Unicode>militäriich organifirt haben wird und diefe beiden N</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0017">
+                <pc:Coords points="153,1005 1137,1005 1137,1056 153,1056"/>
+                <pc:TextEquiv conf="0.808047180175781">
+                    <pc:Unicode>mit ihren 4—500 Millionen Einwohnern ganz Europ</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0018">
+                <pc:Coords points="150,1065 1098,1065 1098,1108 150,1108"/>
+                <pc:TextEquiv conf="0.802981109619141">
+                    <pc:Unicode>bedrohen fönnen, dann ift cher ein Weltkrieg, als</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0019">
+                <pc:Coords points="150,1119 1076,1119 1076,1162 150,1162"/>
+                <pc:TextEquiv conf="0.828825531005859">
+                    <pc:Unicode>Welt-Staatenbund zu erwarten, — ein Weltfrieg, wi</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0020">
+                <pc:Coords points="149,1172 1056,1172 1056,1216 149,1216"/>
+                <pc:TextEquiv conf="0.819430770874023">
+                    <pc:Unicode>die Welt noch nicht gefehen hat. Darum Hand an’s</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0021">
+                <pc:Coords points="152,1224 1103,1224 1103,1269 152,1269"/>
+                <pc:TextEquiv conf="0.803148193359375">
+                    <pc:Unicode>damit es unferer Generation vergönnt fein möge, mit</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0022">
+                <pc:Coords points="154,1264 1145,1264 1145,1334 154,1334"/>
+                <pc:TextEquiv conf="0.772872085571289">
+                    <pc:Unicode>Grün dung des Welt-Staatenbundes das erite Fe</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0023">
+                <pc:Coords points="155,1332 1130,1332 1130,1377 155,1377"/>
+                <pc:TextEquiv conf="0.892740631103516">
+                    <pc:Unicode>des bleibenden Friedens d. h. den endgiltigen Sie</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0024">
+                <pc:Coords points="155,1386 1097,1386 1097,1433 155,1433"/>
+                <pc:TextEquiv conf="0.814748840332031">
+                    <pc:Unicode>der Cultur über die Barbarei in allen Ländern der |</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0025">
+                <pc:Coords points="155,1440 1061,1440 1061,1486 155,1486"/>
+                <pc:TextEquiv conf="0.884864807128906">
+                    <pc:Unicode>nod vor Schluß des jegigen Jahrhunderts zu feiern.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.776979877765362">
+                <pc:Unicode>reih, Rußland und Deutfhland in Betreff der oft
+afiatischen Angelegenheiten und das englifh-frangöfifeh
+ruffiiche Bündnik in Betreff der armenifhen Frage
+al! diefe Bündniffe können als Voritufen für ben Welt:
+Staatenbuud angefehen werden und e3 bedürfte nur d
+Initiative Nußlands, Franfreihs und Deutfchlan!
+um diefe Bündniffe unter Beitritt der amerifanif
+Staaten, fowie Japans und Chinas zu dem Welt
+Staatenbund zu erweitern. Kein Staat hätte Anlaß,
+fidh gegen den Beitritt zu fträuben, denn jeber von ihn
+würde feinen höchiten Wortheil dabei finden. Es wi
+dann feine anderen Madhtfragen mehr geben, als
+wirthbihaftlihen und intellectuellen. Von größte
+Wichtigkeit ift es übrigens, daß -das Zuftandefommen
+MWelt-Staatenbundes möglichit bald bemerfitelligt werd
+Denn wenn erft China nad dem Mufter Japans fi
+militäriich organifirt haben wird und diefe beiden N
+mit ihren 4—500 Millionen Einwohnern ganz Europ
+bedrohen fönnen, dann ift cher ein Weltkrieg, als
+Welt-Staatenbund zu erwarten, — ein Weltfrieg, wi
+die Welt noch nicht gefehen hat. Darum Hand an’s
+damit es unferer Generation vergönnt fein möge, mit
+Grün dung des Welt-Staatenbundes das erite Fe
+des bleibenden Friedens d. h. den endgiltigen Sie
+der Cultur über die Barbarei in allen Ländern der |
+nod vor Schluß des jegigen Jahrhunderts zu feiern.</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="0.309133107854734">
+            <pc:Coords points="0,0 404,0 404,142 0,142"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0001" orientation="0.309133107854734">
+            <pc:Coords points="0,148 13,148 13,164 0,164"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0002" orientation="0.309133107854734">
+            <pc:Coords points="0,1536 97,1536 97,1959 0,1959"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0003" orientation="0.309133107854734">
+            <pc:Coords points="1048,0 1284,0 1284,1959 1048,1959"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0004" orientation="0.309133107854734">
+            <pc:Coords points="930,91 970,91 970,94 930,94"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

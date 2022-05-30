@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0013_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:22.372379</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:22.372379</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0013_DEFAULT.jpg" imageWidth="1323" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0013_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+                <pc:RegionRefIndexed index="5" regionRef="region0005"/>
+                <pc:RegionRefIndexed index="7" regionRef="region0007"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0002" orientation="-0.269000597158595" type="floating" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="123,1234 1115,1234 1115,1280 123,1280"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="123,1234 1115,1234 1115,1280 123,1280"/>
+                <pc:TextEquiv conf="0.777405242919922">
+                    <pc:Unicode>- Streichen ließ, ohne feiner Revandeluft Folge zu geben,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.777405242919922">
+                <pc:Unicode>- Streichen ließ, ohne feiner Revandeluft Folge zu geben,</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0004" orientation="-0.269000597158595" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="157,111 1191,111 1191,1224 157,1224"/>
+            <pc:TextLine id="region0004_line0000">
+                <pc:Coords points="168,111 1086,111 1086,156 168,156"/>
+                <pc:TextEquiv conf="0.830496520996094">
+                    <pc:Unicode>der Bolitif feine zwingende Geltung erlangen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0001">
+                <pc:Coords points="168,164 1122,164 1122,209 168,209"/>
+                <pc:TextEquiv conf="0.759676208496094">
+                    <pc:Unicode>Gründung einer völferrehtlihen Welt-Union auf d</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0002">
+                <pc:Coords points="168,213 1112,213 1112,263 168,263"/>
+                <pc:TextEquiv conf="0.88670654296875">
+                    <pc:Unicode>Grundlage — das ift die große That, die erforderlich</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0003">
+                <pc:Coords points="166,266 1124,266 1124,314 166,314"/>
+                <pc:TextEquiv conf="0.831724395751953">
+                    <pc:Unicode>um der Barbarei des Krieges unter den civilifirten Wöl</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0004">
+                <pc:Coords points="164,322 1120,322 1120,368 164,368"/>
+                <pc:TextEquiv conf="0.909293899536133">
+                    <pc:Unicode>für immer ein Ende zu machen und mit dem Weltfrie</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0005">
+                <pc:Coords points="165,377 1120,377 1120,421 165,421"/>
+                <pc:TextEquiv conf="0.818030166625977">
+                    <pc:Unicode>der Weltwohlfahrt die Wege zu ebnen, indem de</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0006">
+                <pc:Coords points="165,431 1191,431 1191,475 165,475"/>
+                <pc:TextEquiv conf="0.938774795532227">
+                    <pc:Unicode>Antwerpen vom 29. Auguft bis 1. September vorigen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0007">
+                <pc:Coords points="164,476 1113,476 1113,530 164,530"/>
+                <pc:TextEquiv conf="0.849251327514648">
+                    <pc:Unicode>Jahres abgehaltene Friedenscongreß fid) immer w</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0008">
+                <pc:Coords points="166,536 1123,536 1123,582 166,582"/>
+                <pc:TextEquiv conf="0.71627082824707">
+                    <pc:Unicode>für das bloße Schiedsgerichtsfyftem ausfprad, ha,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0009">
+                <pc:Coords points="164,591 1159,591 1159,635 164,635"/>
+                <pc:TextEquiv conf="0.81354866027832">
+                    <pc:Unicode>der Sache des Friedensthatfächlich fo wenig Vorfchubgeleiftet, w</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0010">
+                <pc:Coords points="163,644 1154,644 1154,693 163,693"/>
+                <pc:TextEquiv conf="0.614767913818359">
+                    <pc:Unicode>jeine Vorgänger. Ebenfo ungenügend iftdag „Mittelchen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0011">
+                <pc:Coords points="162,698 1153,698 1153,746 162,746"/>
+                <pc:TextEquiv conf="0.758793716430664">
+                    <pc:Unicode>das in Geflalt eines Waffenjtilljtandsvertrages a;</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0012">
+                <pc:Coords points="162,751 867,751 867,796 162,796"/>
+                <pc:TextEquiv conf="0.79830322265625">
+                    <pc:Unicode>längere Zeit auf’ Tapet gebracht wurde.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0013">
+                <pc:Coords points="250,772 1143,772 1143,850 250,850"/>
+                <pc:TextEquiv conf="0.743993530273438">
+                    <pc:Unicode>Nimmt man an, daß infolge der digen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0014">
+                <pc:Coords points="160,858 1120,858 1120,905 160,905"/>
+                <pc:TextEquiv conf="0.741162872314453">
+                    <pc:Unicode>Wehrpflicht die Völker jelbit friedliebender, denn je</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0015">
+                <pc:Coords points="160,912 1159,912 1159,957 160,957"/>
+                <pc:TextEquiv conf="0.792602920532227">
+                    <pc:Unicode>worden find und daß au die Staatsoberhäupter d</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0016">
+                <pc:Coords points="160,967 1130,967 1130,1011 160,1011"/>
+                <pc:TextEquiv conf="0.855637664794922">
+                    <pc:Unicode>Verantwortung für einen Krieg mit feinen furchtba</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0017">
+                <pc:Coords points="159,1020 1121,1020 1121,1066 159,1066"/>
+                <pc:TextEquiv conf="0.939080047607422">
+                    <pc:Unicode>Folgen nicht mehr leichten Herzens zu übernehmen gen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0018">
+                <pc:Coords points="158,1072 1158,1072 1158,1120 158,1120"/>
+                <pc:TextEquiv conf="0.872881317138672">
+                    <pc:Unicode>find, wie wir aus jeder Thronrede und Präfidenten-Botjchai</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0019">
+                <pc:Coords points="158,1128 1117,1128 1117,1171 158,1171"/>
+                <pc:TextEquiv conf="0.751896209716797">
+                    <pc:Unicode>erjehen, — nimmt man ferner an, daß 3.8. Franke</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0020">
+                <pc:Coords points="157,1175 1093,1175 1093,1224 157,1224"/>
+                <pc:TextEquiv conf="0.809047470092773">
+                    <pc:Unicode>trog feiner glänzenden Armee-Reorganifation 25 Jahre</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.811044772920154">
+                <pc:Unicode>der Bolitif feine zwingende Geltung erlangen.
+Gründung einer völferrehtlihen Welt-Union auf d
+Grundlage — das ift die große That, die erforderlich
+um der Barbarei des Krieges unter den civilifirten Wöl
+für immer ein Ende zu machen und mit dem Weltfrie
+der Weltwohlfahrt die Wege zu ebnen, indem de
+Antwerpen vom 29. Auguft bis 1. September vorigen
+Jahres abgehaltene Friedenscongreß fid) immer w
+für das bloße Schiedsgerichtsfyftem ausfprad, ha,
+der Sache des Friedensthatfächlich fo wenig Vorfchubgeleiftet, w
+jeine Vorgänger. Ebenfo ungenügend iftdag „Mittelchen
+das in Geflalt eines Waffenjtilljtandsvertrages a;
+längere Zeit auf’ Tapet gebracht wurde.
+Nimmt man an, daß infolge der digen
+Wehrpflicht die Völker jelbit friedliebender, denn je
+worden find und daß au die Staatsoberhäupter d
+Verantwortung für einen Krieg mit feinen furchtba
+Folgen nicht mehr leichten Herzens zu übernehmen gen
+find, wie wir aus jeder Thronrede und Präfidenten-Botjchai
+erjehen, — nimmt man ferner an, daß 3.8. Franke
+trog feiner glänzenden Armee-Reorganifation 25 Jahre</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0005" orientation="-0.269000597158595" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="153,1287 1175,1287 1175,1600 153,1600"/>
+            <pc:TextLine id="region0005_line0000">
+                <pc:Coords points="157,1287 1076,1287 1076,1332 157,1332"/>
+                <pc:TextEquiv conf="0.891159362792969">
+                    <pc:Unicode>darf man füglich behaupten, daß es nur der Jmiti</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0001">
+                <pc:Coords points="157,1342 1075,1342 1075,1384 157,1384"/>
+                <pc:TextEquiv conf="0.745977783203125">
+                    <pc:Unicode>einer Großmacht bedürfte, um zu einer Reform</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0002">
+                <pc:Coords points="156,1388 1055,1388 1055,1439 156,1439"/>
+                <pc:TextEquiv conf="0.661041259765625">
+                    <pc:Unicode>Godification des Völferrechts zu gelangen, wie</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0003">
+                <pc:Coords points="154,1442 1095,1442 1095,1495 154,1495"/>
+                <pc:TextEquiv conf="0.710166473388672">
+                    <pc:Unicode>Ion im Jahre 1872 in meiner Schrift „Grundzüg</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0004">
+                <pc:Coords points="153,1502 1120,1502 1120,1546 153,1546"/>
+                <pc:TextEquiv conf="0.797256927490234">
+                    <pc:Unicode>Neform und Godification des Völferrechts“ vorgejchla</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0005">
+                <pc:Coords points="154,1555 1175,1555 1175,1600 154,1600"/>
+                <pc:TextEquiv conf="0.887419281005859">
+                    <pc:Unicode>habe.*) Die bezügliche Initiative würde um jo ficherer von</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.782170181274414">
+                <pc:Unicode>darf man füglich behaupten, daß es nur der Jmiti
+einer Großmacht bedürfte, um zu einer Reform
+Godification des Völferrechts zu gelangen, wie
+Ion im Jahre 1872 in meiner Schrift „Grundzüg
+Neform und Godification des Völferrechts“ vorgejchla
+habe.*) Die bezügliche Initiative würde um jo ficherer von</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0007" orientation="-0.269000597158595" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="153,1640 1209,1640 1209,1816 153,1816"/>
+            <pc:TextLine id="region0007_line0000">
+                <pc:Coords points="224,1640 1115,1640 1115,1682 224,1682"/>
+                <pc:TextEquiv conf="0.755557098388672">
+                    <pc:Unicode>*) Eine vollftändige Ueberfegung der hier citirten Schrift</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0007_line0001">
+                <pc:Coords points="153,1684 1209,1684 1209,1738 153,1738"/>
+                <pc:TextEquiv conf="0.833498916625977">
+                    <pc:Unicode>ichien in den „Etats-Unis d’Europe* (Genf) im „Bulletin de la</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0007_line0002">
+                <pc:Coords points="155,1724 1159,1724 1159,1780 155,1780"/>
+                <pc:TextEquiv conf="0.875240783691406">
+                    <pc:Unicode>Soei6t6 des amis de la paix (Paris) und im „Herald of Peace</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0007_line0003">
+                <pc:Coords points="154,1779 302,1779 302,1816 154,1816"/>
+                <pc:TextEquiv conf="0.191268157958984">
+                    <pc:Unicode>(London).</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.66389123916626">
+                <pc:Unicode>*) Eine vollftändige Ueberfegung der hier citirten Schrift
+ichien in den „Etats-Unis d’Europe* (Genf) im „Bulletin de la
+Soei6t6 des amis de la paix (Paris) und im „Herald of Peace
+(London).</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="-0.269000597158595">
+            <pc:Coords points="0,0 478,0 478,178 0,178"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0001" orientation="-0.269000597158595">
+            <pc:Coords points="0,1154 163,1154 163,1959 0,1959"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0003" orientation="-0.269000597158595">
+            <pc:Coords points="556,0 1322,0 1322,1959 556,1959"/>
+        </pc:ImageRegion>
+        <pc:SeparatorRegion id="region0006">
+            <pc:Coords points="155,1620 314,1620 314,1626 155,1626"/>
+        </pc:SeparatorRegion>
+    </pc:Page>
+</pc:PcGts>

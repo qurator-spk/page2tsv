@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0019_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:34.918467</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:34.918467</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0019_DEFAULT.jpg" imageWidth="1461" imageHeight="2112">
+        <pc:AlternativeImage filename="TESS/FILE_0019_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+                <pc:RegionRefIndexed index="5" regionRef="region0005"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0000" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="740,1662 1180,1662 1180,1688 740,1688"/>
+            <pc:TextLine id="region0000_line0000">
+                <pc:Coords points="740,1662 1180,1662 1180,1688 740,1688"/>
+                <pc:TextEquiv conf="0.153651885986328">
+                    <pc:Unicode>— nn ——</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.153651885986328">
+                <pc:Unicode>— nn ——</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0001" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="815,1699 1149,1699 1149,1734 815,1734"/>
+            <pc:TextLine id="region0001_line0000">
+                <pc:Coords points="815,1699 1149,1699 1149,1734 815,1734"/>
+                <pc:TextEquiv conf="0.568986701965332">
+                    <pc:Unicode>ZEIB Entsäuerung</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.568986701965332">
+                <pc:Unicode>ZEIB Entsäuerung</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0002" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="937,1797 1114,1797 1114,1833 937,1833"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="996,1797 1112,1797 1112,1816 996,1816"/>
+                <pc:TextEquiv conf="0.353407897949219">
+                    <pc:Unicode>N ann</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0001">
+                <pc:Coords points="937,1797 1114,1797 1114,1833 937,1833"/>
+                <pc:TextEquiv conf="0.897406616210938">
+                    <pc:Unicode>Juni 2001</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.625407257080078">
+                <pc:Unicode>N ann
+Juni 2001</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0003" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="358,1817 1238,1817 1238,1966 358,1966"/>
+            <pc:TextLine id="region0003_line0000">
+                <pc:Coords points="358,1817 1238,1817 1238,1966 358,1966"/>
+                <pc:TextEquiv conf="0.397178726196289">
+                    <pc:Unicode>N</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.397178726196289">
+                <pc:Unicode>N</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0004" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="363,1966 734,1966 734,2012 363,2012"/>
+            <pc:TextLine id="region0004_line0000">
+                <pc:Coords points="363,1966 734,1966 734,2012 363,2012"/>
+                <pc:TextEquiv conf="0.905004119873047">
+                    <pc:Unicode>N12&lt;140996825010</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.905004119873047">
+                <pc:Unicode>N12&lt;140996825010</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0005" orientation="0.">
+            <pc:Coords points="1332,0 1461,0 1461,2112 1332,2112"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

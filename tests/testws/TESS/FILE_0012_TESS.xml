@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0012_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:19.537379</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:19.537379</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0012_DEFAULT.jpg" imageWidth="1323" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0012_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0001" orientation="0.153356103000192" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="157,147 1115,147 1115,350 157,350"/>
+            <pc:TextLine id="region0001_line0000">
+                <pc:Coords points="186,147 1115,147 1115,192 186,192"/>
+                <pc:TextEquiv conf="0.869888153076172">
+                    <pc:Unicode>ocialen Frage führen wird.*) Diefe Löfung muß</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0001">
+                <pc:Coords points="157,200 1115,200 1115,246 157,246"/>
+                <pc:TextEquiv conf="0.737589874267578">
+                    <pc:Unicode>- der Löfung der großen politifchen Fragen der</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0002">
+                <pc:Coords points="163,254 715,254 715,304 163,304"/>
+                <pc:TextEquiv conf="0.812107849121094">
+                    <pc:Unicode>jenwart unbedingt vorausgehen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0003">
+                <pc:Coords points="176,306 1115,306 1115,350 176,350"/>
+                <pc:TextEquiv conf="0.752818450927734">
+                    <pc:Unicode>Mit Kleinen Mittelchen behilft man fich auch in</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.793101081848144">
+                <pc:Unicode>ocialen Frage führen wird.*) Diefe Löfung muß
+- der Löfung der großen politifchen Fragen der
+jenwart unbedingt vorausgehen.
+Mit Kleinen Mittelchen behilft man fich auch in</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0002" orientation="0.153356103000192" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="152,461 1117,461 1117,722 152,722"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="152,461 1116,461 1116,515 152,515"/>
+                <pc:TextEquiv conf="0.554201698303223">
+                    <pc:Unicode>1 allgemeinen Friedensbedürfnig der Wölker Europa’s</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0001">
+                <pc:Coords points="161,521 1114,521 1114,566 161,566"/>
+                <pc:TextEquiv conf="0.8215576171875">
+                    <pc:Unicode>pricht. Das Syitem des Militarismus und der ein-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0002">
+                <pc:Coords points="152,573 1116,573 1116,616 152,616"/>
+                <pc:TextEquiv conf="0.506378402709961">
+                    <pc:Unicode>tigen Selbithilfe bei internationalen Streitigkeiten,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0003">
+                <pc:Coords points="188,628 1117,628 1117,672 188,672"/>
+                <pc:TextEquiv conf="0.828374786376953">
+                    <pc:Unicode>it einem Worte die Faujtrechts- oder Kriegspraris</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0004">
+                <pc:Coords points="200,680 1116,680 1116,722 200,722"/>
+                <pc:TextEquiv conf="0.850918273925781">
+                    <pc:Unicode>Seitens der civilifirten Staaten endlich aufgegeben</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.712286155700684">
+                <pc:Unicode>1 allgemeinen Friedensbedürfnig der Wölker Europa’s
+pricht. Das Syitem des Militarismus und der ein-
+tigen Selbithilfe bei internationalen Streitigkeiten,
+it einem Worte die Faujtrechts- oder Kriegspraris
+Seitens der civilifirten Staaten endlich aufgegeben</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0003" orientation="0.153356103000192" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="151,786 1126,786 1126,1797 151,1797"/>
+            <pc:TextLine id="region0003_line0000">
+                <pc:Coords points="200,786 1118,786 1118,832 200,832"/>
+                <pc:TextEquiv conf="0.538695907592773">
+                    <pc:Unicode>3 verjchiedenen Friedensgefellihaften verfolgen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0001">
+                <pc:Coords points="151,835 1115,835 1115,885 151,885"/>
+                <pc:TextEquiv conf="0.380040130615234">
+                    <pc:Unicode> löblichen Zweck, diejes Mißverhältnig dadurch ziı bes</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0002">
+                <pc:Coords points="233,893 1117,893 1117,938 233,938"/>
+                <pc:TextEquiv conf="0.80039306640625">
+                    <pc:Unicode>daß fie für die Schlichtung internationaler Conflicte</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0003">
+                <pc:Coords points="234,947 1118,947 1118,994 234,994"/>
+                <pc:TextEquiv conf="0.792998886108398">
+                    <pc:Unicode>weilig einzufegende Schiedsgerichte eintreten und</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0004">
+                <pc:Coords points="190,1000 1118,1000 1118,1064 190,1064"/>
+                <pc:TextEquiv conf="0.778789215087891">
+                    <pc:Unicode>ffentliche Meinung dafür zu erwärmen fuchen. Die</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0005">
+                <pc:Coords points="186,1053 1117,1053 1117,1097 186,1097"/>
+                <pc:TextEquiv conf="0.896392135620117">
+                    <pc:Unicode>inger des Militarismus machen dem gegenüber geltend,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0006">
+                <pc:Coords points="153,1092 1119,1092 1119,1151 153,1151"/>
+                <pc:TextEquiv conf="0.632125053405762">
+                    <pc:Unicode>‚ feine Sroßmakht die Entfcheidung über ihre eigenen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0007">
+                <pc:Coords points="197,1159 1120,1159 1120,1208 197,1208"/>
+                <pc:TextEquiv conf="0.677471313476563">
+                    <pc:Unicode>eiien, joweit cs fih nicht um unbedeutende Dinge</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0008">
+                <pc:Coords points="195,1209 1118,1209 1118,1264 195,1264"/>
+                <pc:TextEquiv conf="0.879721984863281">
+                    <pc:Unicode>It, aus den Händen geben oder den jeweiligen zu er:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0009">
+                <pc:Coords points="211,1264 1121,1264 1121,1312 211,1312"/>
+                <pc:TextEquiv conf="0.783618316650391">
+                    <pc:Unicode>den Schiedsrichtern überlafien fünne. Inder That</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0010">
+                <pc:Coords points="169,1317 1121,1317 1121,1363 169,1363"/>
+                <pc:TextEquiv conf="0.65309211730957">
+                    <pc:Unicode>) auch dur ein bloßes Schiedsgerichtsiyitem,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0011">
+                <pc:Coords points="215,1370 1120,1370 1120,1419 215,1419"/>
+                <pc:TextEquiv conf="0.924714813232422">
+                    <pc:Unicode>Annahme dem Belieben der einzelnen Mächte über:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0012">
+                <pc:Coords points="199,1421 1122,1421 1122,1473 199,1473"/>
+                <pc:TextEquiv conf="0.66466552734375">
+                    <pc:Unicode>‚bleibt, der Krieg nit aus der Welt gejhafft</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0013">
+                <pc:Coords points="272,1476 1120,1476 1120,1521 272,1521"/>
+                <pc:TextEquiv conf="0.806078033447266">
+                    <pc:Unicode>Diefes Ziel ift vielmehr nur dur eine völfer-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0014">
+                <pc:Coords points="226,1529 1124,1529 1124,1576 226,1576"/>
+                <pc:TextEquiv conf="0.643998260498047">
+                    <pc:Unicode>h zu fanctionirende, allgemein verbindliche</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0015">
+                <pc:Coords points="192,1583 1125,1583 1125,1632 192,1632"/>
+                <pc:TextEquiv conf="0.775692367553711">
+                    <pc:Unicode>regelmäßige internationale Gerichtsbarkeit</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0016">
+                <pc:Coords points="156,1636 1126,1636 1126,1685 156,1685"/>
+                <pc:TextEquiv conf="0.694546279907227">
+                    <pc:Unicode>erreichen. Das Nechtsprincip muß endlich auch in</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0017">
+                <pc:Coords points="190,1707 1124,1707 1124,1755 190,1755"/>
+                <pc:TextEquiv conf="0.671603851318359">
+                    <pc:Unicode>) Bgl. auch meine Schrift „Der Anarhismus und das</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0018">
+                <pc:Coords points="158,1751 1124,1751 1124,1797 158,1797"/>
+                <pc:TextEquiv conf="0.686930847167969">
+                    <pc:Unicode>ht der Schwachen oder: Die drei Grundübel umjerer Zeit‘</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.72008253197921">
+                <pc:Unicode>3 verjchiedenen Friedensgefellihaften verfolgen
+ löblichen Zweck, diejes Mißverhältnig dadurch ziı bes
+daß fie für die Schlichtung internationaler Conflicte
+weilig einzufegende Schiedsgerichte eintreten und
+ffentliche Meinung dafür zu erwärmen fuchen. Die
+inger des Militarismus machen dem gegenüber geltend,
+‚ feine Sroßmakht die Entfcheidung über ihre eigenen
+eiien, joweit cs fih nicht um unbedeutende Dinge
+It, aus den Händen geben oder den jeweiligen zu er:
+den Schiedsrichtern überlafien fünne. Inder That
+) auch dur ein bloßes Schiedsgerichtsiyitem,
+Annahme dem Belieben der einzelnen Mächte über:
+‚bleibt, der Krieg nit aus der Welt gejhafft
+Diefes Ziel ift vielmehr nur dur eine völfer-
+h zu fanctionirende, allgemein verbindliche
+regelmäßige internationale Gerichtsbarkeit
+erreichen. Das Nechtsprincip muß endlich auch in
+) Bgl. auch meine Schrift „Der Anarhismus und das
+ht der Schwachen oder: Die drei Grundübel umjerer Zeit‘</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="0.153356103000192">
+            <pc:Coords points="0,125 1117,125 1117,1959 0,1959"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0004" orientation="0.153356103000192">
+            <pc:Coords points="1159,0 1323,0 1323,1959 1159,1959"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

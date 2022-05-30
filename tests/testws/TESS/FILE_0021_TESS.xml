@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0021_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:37.316914</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:37.316914</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0021_DEFAULT.jpg" imageWidth="1506" imageHeight="2234">
+        <pc:AlternativeImage filename="TESS/FILE_0021_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+                <pc:RegionRefIndexed index="5" regionRef="region0005"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0000" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="148,118 1323,118 1323,249 148,249"/>
+            <pc:TextLine id="region0000_line0000">
+                <pc:Coords points="148,118 1323,118 1323,249 148,249"/>
+                <pc:TextEquiv conf="0.451914672851563">
+                    <pc:Unicode>Ein Welt-Stantenbund</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.451914672851563">
+                <pc:Unicode>Ein Welt-Stantenbund</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0001" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="423,299 1272,299 1272,500 423,500"/>
+            <pc:TextLine id="region0001_line0000">
+                <pc:Coords points="423,299 1272,299 1272,379 423,379"/>
+                <pc:TextEquiv conf="0.61743221282959">
+                    <pc:Unicode>als Fiherties Mittel zur Befeitigung</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0001">
+                <pc:Coords points="704,428 992,428 992,500 704,500"/>
+                <pc:TextEquiv conf="0.826985321044922">
+                    <pc:Unicode>des Krieges.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.722208766937256">
+                <pc:Unicode>als Fiherties Mittel zur Befeitigung
+des Krieges.</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0002" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="490,816 1184,816 1184,935 490,935"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="811,816 872,816 872,844 811,844"/>
+                <pc:TextEquiv conf="0.545818023681641">
+                    <pc:Unicode>Bon</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0001">
+                <pc:Coords points="490,867 1184,867 1184,935 490,935"/>
+                <pc:TextEquiv conf="0.889519424438477">
+                    <pc:Unicode>Eduard Loewenthal, Dr. phil.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.717668724060059">
+                <pc:Unicode>Bon
+Eduard Loewenthal, Dr. phil.</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0003" orientation="0." type="caption" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="792,1047 1390,1047 1390,1166 792,1166"/>
+            <pc:TextLine id="region0003_line0000">
+                <pc:Coords points="792,1047 1390,1047 1390,1166 792,1166"/>
+                <pc:TextEquiv conf="0.534808006286621">
+                    <pc:Unicode>NN ul Il un</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.534808006286621">
+                <pc:Unicode>NN ul Il un</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0004" orientation="0." readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="309,2008 797,2008 797,2159 309,2159"/>
+            <pc:TextLine id="region0004_line0000">
+                <pc:Coords points="309,2008 648,2008 648,2043 309,2043"/>
+                <pc:TextEquiv conf="0.961395034790039">
+                    <pc:Unicode>Staatsbibliothek</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0001">
+                <pc:Coords points="310,2061 492,2061 492,2094 310,2094"/>
+                <pc:TextEquiv conf="0.963343048095703">
+                    <pc:Unicode>zu Berlin</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0002">
+                <pc:Coords points="310,2122 797,2122 797,2159 310,2159"/>
+                <pc:TextEquiv conf="0.966184768676758">
+                    <pc:Unicode>Preußischer Kulturbesitz</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.963640950520833">
+                <pc:Unicode>Staatsbibliothek
+zu Berlin
+Preußischer Kulturbesitz</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0005" orientation="0.">
+            <pc:Coords points="0,940 1506,940 1506,2234 0,2234"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

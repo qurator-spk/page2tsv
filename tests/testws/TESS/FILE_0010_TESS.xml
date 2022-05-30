@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0010_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:13.225699</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:13.225699</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0010_DEFAULT.jpg" imageWidth="1323" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0010_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0001" orientation="0.507393942707608" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="80,60 1177,60 1177,1805 80,1805"/>
+            <pc:TextLine id="region0001_line0000">
+                <pc:Coords points="144,60 1161,60 1161,146 144,146"/>
+                <pc:TextEquiv conf="0.639974594116211">
+                    <pc:Unicode>drängen, daß ne troß aller politischen Freiheit die</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0001">
+                <pc:Coords points="145,154 1160,154 1160,198 145,198"/>
+                <pc:TextEquiv conf="0.889094772338867">
+                    <pc:Unicode>Eriftenz der Einzelnen immer mehr in Frage ge-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0002">
+                <pc:Coords points="145,208 1162,208 1162,250 145,250"/>
+                <pc:TextEquiv conf="0.724222869873047">
+                    <pc:Unicode>jtellt wird, — Ddiefe Thatfache hat bis jegt bei den</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0003">
+                <pc:Coords points="148,261 1162,261 1162,306 148,306"/>
+                <pc:TextEquiv conf="0.87871940612793">
+                    <pc:Unicode>Negierenden und bei den befigenden Glaffen durchaus nicht</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0004">
+                <pc:Coords points="146,315 831,315 831,358 146,358"/>
+                <pc:TextEquiv conf="0.886001968383789">
+                    <pc:Unicode>die ihr zufommende Beachtung gefunden.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0005">
+                <pc:Coords points="235,368 1163,368 1163,409 235,409"/>
+                <pc:TextEquiv conf="0.718113403320312">
+                    <pc:Unicode>Das Gejammtheitsbewußtiein und das Bemwußtjein</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0006">
+                <pc:Coords points="116,421 1163,421 1163,463 116,463"/>
+                <pc:TextEquiv conf="0.80177848815918">
+                    <pc:Unicode>der Interefjen-Solidarität der ganzen Menfchheit</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0007">
+                <pc:Coords points="127,475 1162,475 1162,523 127,523"/>
+                <pc:TextEquiv conf="0.4212451171875">
+                    <pc:Unicode>te, das die legtere als Gefellfchaft Fenmzeichnet.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0008">
+                <pc:Coords points="146,528 1163,528 1163,571 146,571"/>
+                <pc:TextEquiv conf="0.776131362915039">
+                    <pc:Unicode>Diefe Interejjen-Solidarität erfordert, daß jedem Angehörigen</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0009">
+                <pc:Coords points="147,581 1164,581 1164,623 147,623"/>
+                <pc:TextEquiv conf="0.802206420898438">
+                    <pc:Unicode>der Gefellfchaft die Eriftenz innerhalb diefer ermöglicht</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0010">
+                <pc:Coords points="148,634 1162,634 1162,678 148,678"/>
+                <pc:TextEquiv conf="0.71508918762207">
+                    <pc:Unicode>bezw. gefichert wird. Wenn die Gefellichaft den Arbeits:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0011">
+                <pc:Coords points="148,687 1165,687 1165,730 148,730"/>
+                <pc:TextEquiv conf="0.757848663330078">
+                    <pc:Unicode>lojen feinem Schiejal überläßt, fo drängt fie ihn einfach</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0012">
+                <pc:Coords points="148,740 1166,740 1166,785 148,785"/>
+                <pc:TextEquiv conf="0.794860763549805">
+                    <pc:Unicode>auf die Pfade des Anarhismus, d. b. zur Kriegserflärung</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0013">
+                <pc:Coords points="148,793 1163,793 1163,839 148,839"/>
+                <pc:TextEquiv conf="0.677968292236328">
+                    <pc:Unicode>gegen eine menschliche Gefellfchaft ohne Menfchlichkeitsgefühl.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0014">
+                <pc:Coords points="238,857 1162,857 1162,898 238,898"/>
+                <pc:TextEquiv conf="0.881191101074219">
+                    <pc:Unicode>Statt dies einzufehen und demgemäß zu handeln, über:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0015">
+                <pc:Coords points="149,910 1168,910 1168,953 149,953"/>
+                <pc:TextEquiv conf="0.844684143066406">
+                    <pc:Unicode>laffen die befigenden Klaffen die Fürforge für die Abwehr</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0016">
+                <pc:Coords points="149,964 1164,964 1164,1006 149,1006"/>
+                <pc:TextEquiv conf="0.755542449951172">
+                    <pc:Unicode>der von ihnen felbjt auf den Kriegspfad gedrängten Nrbeits:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0017">
+                <pc:Coords points="139,1017 1168,1017 1168,1061 139,1061"/>
+                <pc:TextEquiv conf="0.553567657470703">
+                    <pc:Unicode>‚ofen lediglich der Polizei. Diefe thut jelbftverftändlich ihre</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0018">
+                <pc:Coords points="150,1070 1169,1070 1169,1114 150,1114"/>
+                <pc:TextEquiv conf="0.788738327026367">
+                    <pc:Unicode>Pflicht. Aber die Gejellichaft hat damit ihre Pflicht‘ nicht</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0019">
+                <pc:Coords points="151,1124 1167,1124 1167,1167 151,1167"/>
+                <pc:TextEquiv conf="0.752847290039062">
+                    <pc:Unicode>erfüllt. Sie befchwört vielmehr durch diefes herzlofe und</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0020">
+                <pc:Coords points="150,1177 1169,1177 1169,1218 150,1218"/>
+                <pc:TextEquiv conf="0.736484527587891">
+                    <pc:Unicode>thörichte Verhalten Gefahren herauf, denen jchlieglich Die</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0021">
+                <pc:Coords points="153,1229 953,1229 953,1273 153,1273"/>
+                <pc:TextEquiv conf="0.854156951904297">
+                    <pc:Unicode>Staatsgewalt nicht mehr gewachjen fein dürfte.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0022">
+                <pc:Coords points="243,1282 1169,1282 1169,1325 243,1325"/>
+                <pc:TextEquiv conf="0.822040557861328">
+                    <pc:Unicode>Einzelne Negierungen fuchen wohl mit allerlei halben</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0023">
+                <pc:Coords points="83,1335 1168,1335 1168,1379 83,1379"/>
+                <pc:TextEquiv conf="0.456777191162109">
+                    <pc:Unicode>—  Mafregeln und Eleinen Mittelchen Abhilfe zu fchaffen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0024">
+                <pc:Coords points="80,1383 1170,1383 1170,1436 80,1436"/>
+                <pc:TextEquiv conf="0.739783630371094">
+                    <pc:Unicode>an Dahin gehört die Alters» und Unfallverfiheruug, das Ge-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0025">
+                <pc:Coords points="82,1441 1174,1441 1174,1489 82,1489"/>
+                <pc:TextEquiv conf="0.796267013549805">
+                    <pc:Unicode>ep der fühen Sonntagsruhe und dergleichen Einrichtungen,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0026">
+                <pc:Coords points="104,1494 1173,1494 1173,1536 104,1536"/>
+                <pc:TextEquiv conf="0.663737335205078">
+                    <pc:Unicode>- Die den rbeitgeber belajten, ohne dem Arbeiter viel zu</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0027">
+                <pc:Coords points="158,1547 1174,1547 1174,1591 158,1591"/>
+                <pc:TextEquiv conf="0.916881256103516">
+                    <pc:Unicode>helfen, während fie für den Arbeitslofen überhaupt nicht in</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0028">
+                <pc:Coords points="158,1602 450,1602 450,1642 158,1642"/>
+                <pc:TextEquiv conf="0.639915237426758">
+                    <pc:Unicode>Betracht fommen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0029">
+                <pc:Coords points="247,1654 1174,1654 1174,1696 247,1696"/>
+                <pc:TextEquiv conf="0.739665069580078">
+                    <pc:Unicode>Nein durch jolche Kleine Mittelchen wird der Zufanımen-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0030">
+                <pc:Coords points="159,1706 1175,1706 1175,1751 159,1751"/>
+                <pc:TextEquiv conf="0.677697601318359">
+                    <pc:Unicode>jturz, der die moderne Gefellichaft bedroht, jicher nicht hintange-</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0031">
+                <pc:Coords points="164,1760 1177,1760 1177,1805 164,1805"/>
+                <pc:TextEquiv conf="0.677206726074219">
+                    <pc:Unicode>halten werden. Um gründliche Abhilfe zu chaffen, muß</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.74313873052597">
+                <pc:Unicode>drängen, daß ne troß aller politischen Freiheit die
+Eriftenz der Einzelnen immer mehr in Frage ge-
+jtellt wird, — Ddiefe Thatfache hat bis jegt bei den
+Negierenden und bei den befigenden Glaffen durchaus nicht
+die ihr zufommende Beachtung gefunden.
+Das Gejammtheitsbewußtiein und das Bemwußtjein
+der Interefjen-Solidarität der ganzen Menfchheit
+te, das die legtere als Gefellfchaft Fenmzeichnet.
+Diefe Interejjen-Solidarität erfordert, daß jedem Angehörigen
+der Gefellfchaft die Eriftenz innerhalb diefer ermöglicht
+bezw. gefichert wird. Wenn die Gefellichaft den Arbeits:
+lojen feinem Schiejal überläßt, fo drängt fie ihn einfach
+auf die Pfade des Anarhismus, d. b. zur Kriegserflärung
+gegen eine menschliche Gefellfchaft ohne Menfchlichkeitsgefühl.
+Statt dies einzufehen und demgemäß zu handeln, über:
+laffen die befigenden Klaffen die Fürforge für die Abwehr
+der von ihnen felbjt auf den Kriegspfad gedrängten Nrbeits:
+‚ofen lediglich der Polizei. Diefe thut jelbftverftändlich ihre
+Pflicht. Aber die Gejellichaft hat damit ihre Pflicht‘ nicht
+erfüllt. Sie befchwört vielmehr durch diefes herzlofe und
+thörichte Verhalten Gefahren herauf, denen jchlieglich Die
+Staatsgewalt nicht mehr gewachjen fein dürfte.
+Einzelne Negierungen fuchen wohl mit allerlei halben
+—  Mafregeln und Eleinen Mittelchen Abhilfe zu fchaffen.
+an Dahin gehört die Alters» und Unfallverfiheruug, das Ge-
+ep der fühen Sonntagsruhe und dergleichen Einrichtungen,
+- Die den rbeitgeber belajten, ohne dem Arbeiter viel zu
+helfen, während fie für den Arbeitslofen überhaupt nicht in
+Betracht fommen.
+Nein durch jolche Kleine Mittelchen wird der Zufanımen-
+jturz, der die moderne Gefellichaft bedroht, jicher nicht hintange-
+halten werden. Um gründliche Abhilfe zu chaffen, muß</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="0.507393942707608">
+            <pc:Coords points="0,0 137,0 137,1959 0,1959"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0002" orientation="0.507393942707608">
+            <pc:Coords points="1266,0 1323,0 1323,95 1266,95"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0003" orientation="0.507393942707608">
+            <pc:Coords points="1288,1813 1323,1813 1323,1959 1288,1959"/>
+        </pc:ImageRegion>
+    </pc:Page>
+</pc:PcGts>

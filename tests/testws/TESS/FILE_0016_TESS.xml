@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc:PcGts xmlns:pc="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd" pcGtsId="FILE_0016_TESS">
+    <pc:Metadata>
+        <pc:Creator>OCR-D/core 2.34.0</pc:Creator>
+        <pc:Created>2022-05-30T16:41:31.299877</pc:Created>
+        <pc:LastChange>2022-05-30T16:41:31.299877</pc:LastChange>
+        <pc:MetadataItem type="processingStep" name="layout/segmentation/region" value="ocrd-tesserocr-recognize">
+            <pc:Labels externalModel="ocrd-tool" externalId="parameters">
+                <pc:Label value="False" type="find_tables"/>
+                <pc:Label value="line" type="textequiv_level"/>
+                <pc:Label value="region" type="segmentation_level"/>
+                <pc:Label value="deu" type="model"/>
+                <pc:Label value="0" type="dpi"/>
+                <pc:Label value="0" type="padding"/>
+                <pc:Label value="False" type="overwrite_segments"/>
+                <pc:Label value="True" type="overwrite_text"/>
+                <pc:Label value="False" type="shrink_polygons"/>
+                <pc:Label value="False" type="block_polygons"/>
+                <pc:Label value="False" type="find_staves"/>
+                <pc:Label value="False" type="sparse_text"/>
+                <pc:Label value="False" type="raw_lines"/>
+                <pc:Label value="" type="char_whitelist"/>
+                <pc:Label value="" type="char_blacklist"/>
+                <pc:Label value="" type="char_unblacklist"/>
+                <pc:Label value="{}" type="tesseract_parameters"/>
+                <pc:Label value="{}" type="xpath_parameters"/>
+                <pc:Label value="{}" type="xpath_model"/>
+                <pc:Label value="False" type="auto_model"/>
+                <pc:Label value="DEFAULT" type="oem"/>
+            </pc:Labels>
+            <pc:Labels externalModel="ocrd-tool" externalId="version">
+                <pc:Label value="0.13.6 (tesseract 5.1.0)" type="ocrd-tesserocr-recognize"/>
+                <pc:Label value="2.34.0" type="ocrd/core"/>
+            </pc:Labels>
+        </pc:MetadataItem>
+    </pc:Metadata>
+    <pc:Page imageFilename="DEFAULT/FILE_0016_DEFAULT.jpg" imageWidth="1267" imageHeight="1959">
+        <pc:AlternativeImage filename="TESS/FILE_0016_TESS.IMG-BIN.png" comments=",binarized,clipped"/>
+        <pc:ReadingOrder>
+            <pc:OrderedGroup id="reading-order">
+                <pc:RegionRefIndexed index="0" regionRef="region0000"/>
+                <pc:RegionRefIndexed index="1" regionRef="region0001"/>
+                <pc:RegionRefIndexed index="2" regionRef="region0002"/>
+                <pc:RegionRefIndexed index="3" regionRef="region0003"/>
+                <pc:RegionRefIndexed index="4" regionRef="region0004"/>
+                <pc:RegionRefIndexed index="5" regionRef="region0005"/>
+                <pc:RegionRefIndexed index="6" regionRef="region0006"/>
+            </pc:OrderedGroup>
+        </pc:ReadingOrder>
+        <pc:TextRegion id="region0001" orientation="-0.136523568698152" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="173,77 1161,77 1161,245 173,245"/>
+            <pc:TextLine id="region0001_line0000">
+                <pc:Coords points="173,77 1161,77 1161,206 173,206"/>
+                <pc:TextEquiv conf="0.414798011779785">
+                    <pc:Unicode>. und Sefhyichte des a a fünf &gt;</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0001_line0001">
+                <pc:Coords points="270,190 1143,190 1143,245 270,245"/>
+                <pc:TextEquiv conf="0.680044555664063">
+                    <pc:Unicode>gen.) Auch in englifcher Neberfegung erjchienen.</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.547421283721924">
+                <pc:Unicode>. und Sefhyichte des a a fünf &gt;
+gen.) Auch in englifcher Neberfegung erjchienen.</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0002" orientation="-0.136523568698152" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="160,240 1118,240 1118,336 160,336"/>
+            <pc:TextLine id="region0002_line0000">
+                <pc:Coords points="160,240 1118,240 1118,300 160,300"/>
+                <pc:TextEquiv conf="0.808742370605469">
+                    <pc:Unicode>er Kampf um die enropäifche Suprematie. (Berlin,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0002_line0001">
+                <pc:Coords points="240,287 613,287 613,336 240,336"/>
+                <pc:TextEquiv conf="0.752815704345703">
+                    <pc:Unicode>I Siegismund 1890.)</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.780779037475586">
+                <pc:Unicode>er Kampf um die enropäifche Suprematie. (Berlin,
+I Siegismund 1890.)</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0003" orientation="-0.136523568698152" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="164,321 1162,321 1162,627 164,627"/>
+            <pc:TextLine id="region0003_line0000">
+                <pc:Coords points="247,321 1162,321 1162,399 247,399"/>
+                <pc:TextEquiv conf="0.654648742675781">
+                    <pc:Unicode>eltgefdyichte für Iedermann. (Berlin, Reform:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0003_line0001">
+                <pc:Coords points="164,526 1108,526 1108,627 164,627"/>
+                <pc:TextEquiv conf="0.658683929443359">
+                    <pc:Unicode>er Staat Bm und feine Aachfolge. (Berlin,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.65666633605957">
+                <pc:Unicode>eltgefdyichte für Iedermann. (Berlin, Reform:
+er Staat Bm und feine Aachfolge. (Berlin,</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0004" orientation="-0.136523568698152" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="150,648 1102,648 1102,821 150,821"/>
+            <pc:TextLine id="region0004_line0000">
+                <pc:Coords points="150,648 1102,648 1102,820 150,820"/>
+                <pc:TextEquiv conf="0.614851264953613">
+                    <pc:Unicode>en Motive des ER (Berlin, Reform:</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0004_line0001">
+                <pc:Coords points="246,784 285,784 285,821 246,821"/>
+                <pc:TextEquiv conf="0.737091674804688">
+                    <pc:Unicode>ag,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.67597146987915">
+                <pc:Unicode>en Motive des ER (Berlin, Reform:
+ag,</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:TextRegion id="region0005" orientation="-0.136523568698152" readingDirection="left-to-right" textLineOrder="top-to-bottom">
+            <pc:Coords points="180,806 1102,806 1102,934 180,934"/>
+            <pc:TextLine id="region0005_line0000">
+                <pc:Coords points="180,806 1102,806 1102,888 180,888"/>
+                <pc:TextEquiv conf="0.690268096923828">
+                    <pc:Unicode>ter ionales Säcular-Aibnın. I. Band. (Berlin,</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextLine id="region0005_line0001">
+                <pc:Coords points="221,863 490,863 490,934 221,934"/>
+                <pc:TextEquiv conf="0.696689910888672">
+                    <pc:Unicode>el Siegismund.)</pc:Unicode>
+                </pc:TextEquiv>
+            </pc:TextLine>
+            <pc:TextEquiv conf="0.69347900390625">
+                <pc:Unicode>ter ionales Säcular-Aibnın. I. Band. (Berlin,
+el Siegismund.)</pc:Unicode>
+            </pc:TextEquiv>
+        </pc:TextRegion>
+        <pc:ImageRegion id="region0000" orientation="-0.136523568698152">
+            <pc:Coords points="0,0 386,0 386,944 0,944"/>
+        </pc:ImageRegion>
+        <pc:ImageRegion id="region0006" orientation="-0.136523568698152">
+            <pc:Coords points="506,1294 673,1294 673,1463 506,1463"/>
+        </pc:ImageRegion>
+        <pc:SeparatorRegion id="region0007">
+            <pc:Coords points="380,1905 787,1905 787,1915 380,1915"/>
+        </pc:SeparatorRegion>
+        <pc:SeparatorRegion id="region0008">
+            <pc:Coords points="815,1914 925,1914 925,1921 815,1921"/>
+        </pc:SeparatorRegion>
+    </pc:Page>
+</pc:PcGts>
