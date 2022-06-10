@@ -6,7 +6,7 @@ with open('requirements.txt') as fp:
 
 setup(
     name="tsvtools",
-    version="0.0.1",
+    version="0.0.2",
     author="",
     author_email="qurator@sbb.spk-berlin.de",
     description="neath",

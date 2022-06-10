@@ -1,6 +1,10 @@
 # TSV - Processing Tools
 
+Create .tsv files that can be viewed and edited with [neat](https://github.com/qurator-spk/neat).
+
 ## Installation:
+
+Clone this project and the [SBB-utils](https://github.com/qurator-spk/sbb_utils).
 
 Setup virtual environment:
 ```
@@ -19,7 +23,8 @@ pip install -U pip
 
 Install package together with its dependencies in development mode:
 ```
-pip install -e ./
+pip install -e sbb_utils
+pip install -e page2tsv
 ```
 
 ## PAGE-XML to TSV Transformation:
@@ -58,4 +63,34 @@ Create a URL-annotated TSV file from an existing TSV file:
 
 ```
 annotate-tsv enp_DE.tsv enp_DE-annotated.tsv
+```
+
+# Command-line interface:
+
+```
+page2tsv [OPTIONS] PAGE_XML_FILE TSV_OUT_FILE
+
+Options:
+  --purpose [NERD|OCR]      Purpose of output tsv file.
+                            
+                            NERD: NER/NED application/ground-truth creation.
+                            
+                            OCR: OCR application/ground-truth creation.
+                            
+                            default: NERD.
+  --image-url TEXT
+  --ner-rest-endpoint TEXT  REST endpoint of sbb_ner service. See
+                            https://github.com/qurator-spk/sbb_ner for
+                            details. Only applicable in case of NERD.
+  --ned-rest-endpoint TEXT  REST endpoint of sbb_ned service. See
+                            https://github.com/qurator-spk/sbb_ned for
+                            details. Only applicable in case of NERD.
+  --noproxy                 disable proxy. default: enabled.
+  --scale-factor FLOAT      default: 1.0
+  --ned-threshold FLOAT
+  --min-confidence FLOAT
+  --max-confidence FLOAT
+  --ned-priority INTEGER
+  --help                    Show this message and exit.
+
 ```
