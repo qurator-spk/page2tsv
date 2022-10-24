@@ -35,7 +35,6 @@ class OcrdNeatExportProcessor(Processor):
         noproxy = self.parameter['noproxy']
 
         ppn_found = self.workspace.mets._tree.find('//mods:recordIdentifier[@source="gbv-ppn"]', NS)
-        print(ppn_found)
         if ppn_found is not None:
             ppn = ppn_found.text
         else:
