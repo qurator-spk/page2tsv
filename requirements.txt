@@ -1,4 +1,4 @@
 ocrd >= 2.23.2
 pandas
 matplotlib
-qurator-sbb-tools
+qurator-sbb-utils
