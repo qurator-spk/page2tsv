@@ -56,9 +56,9 @@ class OcrdNeatExportProcessor(Processor):
             page2tsv(input_file.local_filename, tsv_filepath, 'OCR', iiif_url, None, None, noproxy, 1.0, None, None, None, 1)
 
             self.workspace.add_file(
-                ID=file_id,
+                file_id=file_id,
                 file_grp=self.output_file_grp,
-                pageId=page_id,
+                page_id=page_id,
                 mimetype='text/tab-separated-values',
                 local_filename=str(tsv_filepath))
 
@@ -98,9 +98,9 @@ class OcrdNeatImportProcessor(Processor):
             self.add_metadata(pcgts)
             pcgts.set_pcGtsId(file_id)
             self.workspace.add_file(
-                ID=file_id,
+                file_id=file_id,
                 file_grp=self.output_file_grp,
-                pageId=page_id,
+                page_id=page_id,
                 mimetype=MIMETYPE_PAGE,
                 local_filename="%s/%s.xml" % (self.output_file_grp, file_id),
                 content=to_xml(pcgts)
