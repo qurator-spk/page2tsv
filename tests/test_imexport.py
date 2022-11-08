@@ -6,7 +6,7 @@ from ocrd_utils import pushd_popd
 from ocrd_models.ocrd_page import parse
 from ocrd import Resolver
 
-from tsvtools.ocrd_processors import OcrdNeatExportProcessor, OcrdNeatImportProcessor
+from qurator.tsvtools.ocrd_processors import OcrdNeatExportProcessor, OcrdNeatImportProcessor
 
 @fixture
 def testws(tmpdir):

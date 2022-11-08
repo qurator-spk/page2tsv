@@ -8,11 +8,11 @@ with open('ocrd-tool.json') as fj:
     version = load(fj)['version']
 
 setup(
-    name="tsvtools",
+    name="qurator_tsvtools",
     version=version,
-    author="",
+    author="Kai Labusch",
     author_email="qurator@sbb.spk-berlin.de",
-    description="neath",
+    description="Working with QURATOR TSV, especially for neat",
     long_description=open("README.md", "r", encoding='utf-8').read(),
     long_description_content_type="text/markdown",
     keywords='qurator',
@@ -21,15 +21,19 @@ setup(
     packages=find_packages(exclude=["*.tests", "*.tests.*",
                                     "tests.*", "tests"]),
     install_requires=install_requires,
+    namespace_packages=['qurator'],
+    package_data={
+        '': ['*.json']
+    },
     entry_points={
       'console_scripts': [
-        "extract-doc-links=tsvtools.cli:extract_document_links",
-        "annotate-tsv=tsvtools.cli:annotate_tsv",
-        "ocrd-neat-export=tsvtools.ocrd_cli:export_cli",
-        "ocrd-neat-import=tsvtools.ocrd_cli:import_cli",
-        "page2tsv=tsvtools.cli:page2tsv_cli",
-        "tsv2page=tsvtools.cli:tsv2page_cli",
-        "make-page2tsv-commands=tsvtools.cli:make_page2tsv_commands"
+        "extract-doc-links=qurator.tsvtools.cli:extract_document_links",
+        "annotate-tsv=qurator.tsvtools.cli:annotate_tsv",
+        "ocrd-neat-export=qurator.tsvtools.ocrd_cli:export_cli",
+        "ocrd-neat-import=qurator.tsvtools.ocrd_cli:import_cli",
+        "page2tsv=qurator.tsvtools.cli:page2tsv_cli",
+        "tsv2page=qurator.tsvtools.cli:tsv2page_cli",
+        "make-page2tsv-commands=qurator.tsvtools.cli:make_page2tsv_commands"
       ]
     },
     python_requires='>=3.6.0',
