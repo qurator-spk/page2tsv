@@ -33,6 +33,7 @@ setup(
         "ocrd-neat-import=qurator.tsvtools.ocrd_cli:import_cli",
         "page2tsv=qurator.tsvtools.cli:page2tsv_cli",
         "tsv2page=qurator.tsvtools.cli:tsv2page_cli",
+        "alto2tsv=qurator.tsvtools.cli:alto2tsv_cli",
         "make-page2tsv-commands=qurator.tsvtools.cli:make_page2tsv_commands"
       ]
     },
