@@ -17,7 +17,7 @@
         },
         "scale_filegrp": {
           "type": "string",
-          "description": "If the OCR was run on images with a different resolution thant the 'full' IIIF size, use the images in this file group to scale. Set to empty string to disable",
+          "description": "If the OCR was run on images with a different resolution than the 'full' IIIF size, use the images in this file group to scale. Set to empty string to disable",
           "default": ""
         },
         "noproxy": {
