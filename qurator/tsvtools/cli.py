@@ -148,7 +148,9 @@ def alto2tsv(alto_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
 
     for region_idx, region in alto_iterate_textblocks(alto_xml_file):
 
-        for line, line_id, l_left, l_right, l_top, l_bottom in alto_iterate_lines(region):
+        for line, _, l_left, l_right, l_top, l_bottom in alto_iterate_lines(region):
+
+            line_id = len(line_info)
 
             line_info.append((len(urls), l_left, l_right, l_top, l_bottom, line_id))
 
