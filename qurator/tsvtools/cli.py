@@ -215,9 +215,48 @@ def alto2tsv(alto_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     except requests.HTTPError as e:
         print(e)
 
+def unicode_normalize(text, normalization_map=None, use_combining_characters=True):
+
+    if normalization_map is None:
+        ret = "".join([c if unicodedata.category(c) != "Co" else '' for c in text])
+
+        if ret != text:
+            print("Warning: Due to unicode normalization possible loss of information: "
+                  "{} => {} (normalization file missing?)".format(text, ret))
+
+    elif use_combining_characters:
+        ret = "".join([c if unicodedata.category(c) != "Co" else
+                        "{}{}".format(normalization_map.loc[ord(c)].base,
+                                      chr(int(normalization_map.loc[ord(c)].combining_character, base=16))
+                                      if normalization_map.loc[ord(c)].combining_character != '' else '')
+                        if ord(c) in normalization_map.index else '' for c in text])
+
+        # do it again since the normalization map may again contain unicode private use chars
+        ret = "".join([c if unicodedata.category(c) != "Co" else '' for c in ret])
+
+        if ret != text:
+            print("Warning: Due to unicode normalization possible loss of information: "
+                  "{} => {}".format(text, ret))
+    else:
+        ret = "".join([c if unicodedata.category(c) != "Co" else
+                       normalization_map.loc[ord(c)].base
+                       if ord(c) in normalization_map.index else ''
+                       for c in text])
+
+        # do it again since the normalization map may again contain unicode private use chars
+        ret = "".join([c if unicodedata.category(c) != "Co" else '' for c in ret])
+
+        if ret != text:
+            print("Warning: Due to unicode normalization possible loss of information: "
+                  "{} => {}".format(text, ret))
+
+    return unicodedata.normalize('NFC', ret)
 
 def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
-             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority):
+             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority, normalization_file):
+
+    print("page2tsv - processing file: {}".format(page_xml_file))
+
     if purpose == "NERD":
         out_columns = ['No.', 'TOKEN', 'NE-TAG', 'NE-EMB', 'ID', 'url_id', 'left', 'right', 'top', 'bottom', 'conf']
     elif purpose == "OCR":
@@ -241,6 +280,17 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     tsv = []
     line_info = []
 
+    _unicode_normalize = unicode_normalize
+
+    if normalization_file is not None:
+        normalization_map = pd.read_pickle(normalization_file)
+
+        normalization_map = normalization_map.set_index('decimal')
+
+        # import ipdb;ipdb.set_trace()
+
+        _unicode_normalize = lambda s: unicode_normalize(s, normalization_map=normalization_map)
+
     for region_idx, region in enumerate(pcgts.get_Page().get_AllRegions(classes=['Text'], order='reading-order')):
         for text_line in region.get_TextLine():
             left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(text_line.get_Coords().points)]
@@ -259,8 +309,13 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                     # transform OCR coordinates using `scale_factor` to derive
                     # correct coordinates for the web presentation image
                     left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(text_line.get_Coords().points)]
-                    tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
-                                text_equiv.get_Unicode(), len(urls), left, right, top, bottom, text_line.id))
+
+                    text = text_equiv.get_Unicode()
+
+                    for text_part in text.split(" "):
+
+                        tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
+                                    _unicode_normalize(text_part), len(urls), left, right, top, bottom, text_line.id))
             else:
                 for word in words:
                     # XXX TODO make this configurable
@@ -272,7 +327,7 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
                     # correct coordinates for the web presentation image
                     left, top, right, bottom = [int(scale_factor * x) for x in bbox_from_points(word.get_Coords().points)]
                     tsv.append((region_idx, len(line_info) - 1, left + (right - left) / 2.0,
-                                textequiv, len(urls), left, right, top, bottom, text_line.id))
+                                _unicode_normalize(textequiv), len(urls), left, right, top, bottom, text_line.id))
 
     line_info = pd.DataFrame(line_info, columns=['url_id', 'left', 'right', 'top', 'bottom', 'conf', 'line_id'])
 
@@ -312,12 +367,17 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
         tsv = tsv.merge(line_info, left_on='line', right_index=True)
     tsv = tsv[out_columns].reset_index(drop=True)
 
+    # import ipdb;ipdb.set_trace()
+
     try:
         if purpose == 'NERD' and ner_rest_endpoint is not None:
             tsv, ner_result = ner(tsv, ner_rest_endpoint)
             if ned_rest_endpoint is not None:
                 tsv, _ = ned(tsv, ner_result, ned_rest_endpoint, threshold=ned_threshold, priority=ned_priority)
-        tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False)
+
+        # import ipdb;ipdb.set_trace()
+
+        tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False, encoding='utf-8')
     except requests.HTTPError as e:
         print(e)
 
@@ -406,10 +466,11 @@ def make_page2tsv_commands(xls_file, directory, purpose):
 @click.option('--min-confidence', type=float, default=None)
 @click.option('--max-confidence', type=float, default=None)
 @click.option('--ned-priority', type=int, default=1)
+@click.option('--normalization-file', type=click.Path(exists=True), default=None)
 def page2tsv_cli(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
-             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority):
+             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority, normalization_file):
     return page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
-             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority)
+             noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority, normalization_file)
 
 
 @click.command()
