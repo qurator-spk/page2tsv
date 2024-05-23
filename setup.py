@@ -21,7 +21,6 @@ setup(
     packages=find_packages(exclude=["*.tests", "*.tests.*",
                                     "tests.*", "tests"]),
     install_requires=install_requires,
-    namespace_packages=['qurator'],
     package_data={
         '': ['*.json']
     },
