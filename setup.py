@@ -1,6 +1,6 @@
 from io import open
 from json import load
-from setuptools import find_packages, setup
+from setuptools import find_namespace_packages, setup
 
 with open('requirements.txt') as fp:
     install_requires = fp.read()
@@ -18,8 +18,7 @@ setup(
     keywords='qurator',
     license='Apache License 2.0',
     url="https://github.com/qurator-spk/neath",
-    packages=find_packages(exclude=["*.tests", "*.tests.*",
-                                    "tests.*", "tests"]),
+    packages=find_namespace_packages(include=['qurator']),
     install_requires=install_requires,
     package_data={
         '': ['*.json']
