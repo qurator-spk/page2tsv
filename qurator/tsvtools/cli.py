@@ -405,7 +405,7 @@ def tsv2page(output_filename, keep_words, page_file, tsv_file):
 @click.argument('page-file')
 @click.argument('tsv-file')
 def tsv2page_cli(output_filename, keep_words, page_file, tsv_file):
-    return tsv2page_cli(output_filename, keep_words, page_file, tsv_file)
+    return tsv2page(output_filename, keep_words, page_file, tsv_file)
 
 
 @click.command()
