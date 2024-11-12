@@ -307,6 +307,10 @@ def tsv2tsv(tsv_in_file, tsv_out_file, ner_rest_endpoint, noproxy,
     else:
         tsv_tmp, _ = ner(tsv, ner_rest_endpoint, keep_tokenization=keep_tokenization)
 
+    if tsv_out_file is None:
+        print("\n")
+        return
+
     print("\n==>")
 
     print("Output file: {}".format(tsv_out_file))
@@ -355,10 +359,6 @@ def tsv2tsv(tsv_in_file, tsv_out_file, ner_rest_endpoint, noproxy,
             tsv_out.loc[idx, 'No.'] = word_pos
 
             word_pos += 1
-
-    if tsv_out_file is None:
-        print("\n")
-        return
 
     write_tsv(tsv_out, urls, contexts, tsv_out_file)
 
