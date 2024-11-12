@@ -215,6 +215,7 @@ def alto2tsv(alto_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     except requests.HTTPError as e:
         print(e)
 
+
 def unicode_normalize(text, normalization_map=None, use_combining_characters=True):
 
     if normalization_map is None:
@@ -252,6 +253,123 @@ def unicode_normalize(text, normalization_map=None, use_combining_characters=Tru
 
     return unicodedata.normalize('NFC', ret)
 
+
+@click.command()
+@click.argument('tsv-in-file', type=click.Path(exists=True), required=True, nargs=1)
+@click.option('--tsv-out-file', type=click.Path(), default=None, help="Write modified TSV to this file.")
+@click.option('--ner-rest-endpoint', type=str, default=None, help="")
+@click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
+@click.option('--num-tokens', type=bool, is_flag=True, help='Print number of tokens in input/output file.')
+@click.option('--sentence-count', type=bool, is_flag=True, help='Print sentence count in input/output file.')
+@click.option('--max-sentence-len', type=bool, is_flag=True, help='Print maximum sentence len for input/output file.')
+@click.option('--keep-tokenization', type=bool, is_flag=True, help='Keep the word tokenization exactly as it is.')
+@click.option('--sentence-split-only', type=bool, is_flag=True, help='Do only sentence splitting.')
+@click.option('--show-urls', type=bool, is_flag=True, help='Print contained visualization URLs.')
+@click.option('--just-zero', type=bool, is_flag=True, help='Process only files that have max sentence length zero,'
+                                                           'i.e., that do not have sentence splitting.')
+@click.option('--sanitize-sentence-numbers', type=bool, is_flag=True, help='Sanitize sentence numbering.')
+def tsv2tsv(tsv_in_file, tsv_out_file, ner_rest_endpoint, noproxy,
+            num_tokens, sentence_count, max_sentence_len, keep_tokenization, sentence_split_only,
+            show_urls, just_zero, sanitize_sentence_numbers):
+
+    if noproxy:
+        os.environ['no_proxy'] = '*'
+
+    keep_tokenization = keep_tokenization or sentence_split_only
+
+    tsv, urls, contexts = read_tsv(tsv_in_file)
+
+    tsv.loc[tsv.TOKEN.isnull(), 'TOKEN'] = ""
+
+    print("Input file: {}".format(tsv_in_file))
+
+    if show_urls:
+        print("URLS:{}".format(urls))
+
+    if tsv['No.'].max() > 0 and just_zero:
+
+        print("File {} already has sentence splitting (--just-zero). Skipping.".format(tsv_in_file))
+        return
+
+    if num_tokens:
+        print("Number of tokens {}". format(len(tsv)), end=" ")
+
+    if sentence_count:
+        print("Number of sentences {}". format(sum(tsv['No.'] == 0)), end=" ")
+
+    if max_sentence_len:
+        print("Maximum sentence length {}.".format(tsv['No.'].max()), end=" ")
+
+    if ner_rest_endpoint is None:
+        tsv_tmp = tsv
+    else:
+        tsv_tmp, _ = ner(tsv, ner_rest_endpoint, keep_tokenization=keep_tokenization)
+
+    print("\n==>")
+
+    print("Output file: {}".format(tsv_out_file))
+
+    if num_tokens:
+        print("Number of tokens {}". format(len(tsv_tmp)), end=" ")
+
+    if sentence_count:
+        print("Number of sentences {}". format(sum(tsv_tmp['No.'] == 0)), end=" ")
+
+    if max_sentence_len:
+        print("Maximum sentence length {}.".format(tsv_tmp['No.'].max()), end=" ")
+
+    num_diff = -1
+    if keep_tokenization:
+        num_diff = sum(tsv.TOKEN != tsv_tmp.TOKEN)
+
+    if keep_tokenization and num_diff > 0:
+        print("Number of token differences: {}".format(num_diff))
+        raise AssertionError()
+
+        # diff = pd.concat([tsv.loc[tsv.TOKEN != tsv_tmp.TOKEN],
+        #                  tsv_tmp[['TOKEN']].loc[tsv.TOKEN != tsv_tmp.TOKEN].
+        #                  rename(columns={'TOKEN': 'TOKEN_TMP'})], axis=1)
+        #
+        # import ipdb;ipdb.set_trace()
+
+    if sentence_split_only:
+        tsv_out = tsv
+        tsv_out['No.'] = tsv_tmp['No.']
+    else:
+        tsv_out = tsv_tmp
+
+    if sanitize_sentence_numbers:
+
+        word_pos = 0
+        prev_pos = 0
+        for idx, _ in tsv_out.iterrows():
+
+            # if idx < len(tsv_out) and len(tsv_out.loc[idx, 'TOKEN']) == 0 and tsv_out.loc[idx+1, 'No.'] == 0:
+            #     print("word_pos=0!!!!")
+            #     word_pos = 0
+            #
+            # if 0 < tsv_out.loc[idx, 'No.'] < word_pos:
+            #     word_pos = 0
+
+            if prev_pos != 0 and not tsv_out.loc[idx, 'NE-TAG'].startswith('I-') and  \
+                    tsv_out.loc[idx, 'No.'] == 0 or len(tsv_out.loc[idx, 'TOKEN']) == 0:
+                word_pos = 0
+
+            prev_pos = word_pos
+
+            tsv_out.loc[idx, 'No.'] = word_pos
+
+            word_pos += 1
+
+    if tsv_out_file is None:
+        print("\n")
+        return
+
+    write_tsv(tsv_out, urls, contexts, tsv_out_file)
+
+    print("\n")
+
+
 def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
              noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority, normalization_file):
 
@@ -286,8 +404,6 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
         normalization_map = pd.read_pickle(normalization_file)
 
         normalization_map = normalization_map.set_index('decimal')
-
-        # import ipdb;ipdb.set_trace()
 
         _unicode_normalize = lambda s: unicode_normalize(s, normalization_map=normalization_map)
 
@@ -367,15 +483,11 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
         tsv = tsv.merge(line_info, left_on='line', right_index=True)
     tsv = tsv[out_columns].reset_index(drop=True)
 
-    # import ipdb;ipdb.set_trace()
-
     try:
         if purpose == 'NERD' and ner_rest_endpoint is not None:
             tsv, ner_result = ner(tsv, ner_rest_endpoint)
             if ned_rest_endpoint is not None:
                 tsv, _ = ned(tsv, ner_result, ned_rest_endpoint, threshold=ned_threshold, priority=ned_priority)
-
-        # import ipdb;ipdb.set_trace()
 
         tsv.to_csv(tsv_out_file, sep="\t", quoting=3, index=False, mode='a', header=False, encoding='utf-8')
     except requests.HTTPError as e:
