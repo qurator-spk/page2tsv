@@ -346,13 +346,6 @@ def tsv2tsv(tsv_in_file, tsv_out_file, ner_rest_endpoint, noproxy,
         prev_pos = 0
         for idx, _ in tsv_out.iterrows():
 
-            # if idx < len(tsv_out) and len(tsv_out.loc[idx, 'TOKEN']) == 0 and tsv_out.loc[idx+1, 'No.'] == 0:
-            #     print("word_pos=0!!!!")
-            #     word_pos = 0
-            #
-            # if 0 < tsv_out.loc[idx, 'No.'] < word_pos:
-            #     word_pos = 0
-
             if prev_pos != 0 and not tsv_out.loc[idx, 'NE-TAG'].startswith('I-') and  \
                     tsv_out.loc[idx, 'No.'] == 0 or len(tsv_out.loc[idx, 'TOKEN']) == 0:
                 word_pos = 0
