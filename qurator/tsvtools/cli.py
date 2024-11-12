@@ -257,7 +257,9 @@ def unicode_normalize(text, normalization_map=None, use_combining_characters=Tru
 @click.command()
 @click.argument('tsv-in-file', type=click.Path(exists=True), required=True, nargs=1)
 @click.option('--tsv-out-file', type=click.Path(), default=None, help="Write modified TSV to this file.")
-@click.option('--ner-rest-endpoint', type=str, default=None, help="")
+@click.option('--ner-rest-endpoint', type=str, default=None, help="REST endpoint of sbb_ner service. "
+                                                                  "See https://github.com/qurator-spk/sbb_ner "
+                                                                  "for details.")
 @click.option('--noproxy', type=bool, is_flag=True, help='disable proxy. default: enabled.')
 @click.option('--num-tokens', type=bool, is_flag=True, help='Print number of tokens in input/output file.')
 @click.option('--sentence-count', type=bool, is_flag=True, help='Print sentence count in input/output file.')
