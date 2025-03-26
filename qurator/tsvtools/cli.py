@@ -270,9 +270,11 @@ def unicode_normalize(text, normalization_map=None, use_combining_characters=Tru
 @click.option('--just-zero', type=bool, is_flag=True, help='Process only files that have max sentence length zero,'
                                                            'i.e., that do not have sentence splitting.')
 @click.option('--sanitize-sentence-numbers', type=bool, is_flag=True, help='Sanitize sentence numbering.')
+@click.option('--show-columns', type=bool, is_flag=True, help='Show TSV columns.')
+@click.option('--drop-column', type=str, multiple=True, default=[], help="Drop column")
 def tsv2tsv(tsv_in_file, tsv_out_file, ner_rest_endpoint, noproxy,
             num_tokens, sentence_count, max_sentence_len, keep_tokenization, sentence_split_only,
-            show_urls, just_zero, sanitize_sentence_numbers):
+            show_urls, just_zero, sanitize_sentence_numbers, show_columns, drop_column):
 
     if noproxy:
         os.environ['no_proxy'] = '*'
@@ -286,7 +288,13 @@ def tsv2tsv(tsv_in_file, tsv_out_file, ner_rest_endpoint, noproxy,
     print("Input file: {}".format(tsv_in_file))
 
     if show_urls:
-        print("URLS:{}".format(urls))
+        if urls is None or len(urls) == 0:
+            print("URLS missing!")
+        else:
+            print("URLS:{}".format(urls))
+
+    if show_columns:
+        print("Columns: ", " ".join([ c for c in tsv.columns]))
 
     if tsv['No.'].max() > 0 and just_zero:
 
@@ -359,6 +367,8 @@ def tsv2tsv(tsv_in_file, tsv_out_file, ner_rest_endpoint, noproxy,
             tsv_out.loc[idx, 'No.'] = word_pos
 
             word_pos += 1
+
+    tsv_out = tsv_out.drop(columns=[dc for dc in drop_column if dc in tsv_out.columns])
 
     write_tsv(tsv_out, urls, contexts, tsv_out_file)
 
