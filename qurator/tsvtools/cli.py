@@ -611,7 +611,10 @@ def page2tsv_cli(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpo
                    "\n\nNERD: NER/NED application/ground-truth creation. "
                    "\n\nOCR: OCR application/ground-truth creation. "
                    "\n\ndefault: NERD.")
-@click.option('--image-url', type=str, default='http://empty')
+@click.option('--image-url', type=str, default='http://empty',
+              help="An image retrieval link that enables neat to show the scan images corresponding to the text tokens. "
+                   "Example: https://content.staatsbibliothek-berlin.de/zefys/SNP26824620-18371109-0-1-0-0/left,top,"
+                   "width,height/full/0/default.jpg")
 @click.option('--ner-rest-endpoint', type=str, default=None,
               help="REST endpoint of sbb_ner service. See https://github.com/qurator-spk/sbb_ner for details. "
                    "Only applicable in case of NERD.")
@@ -624,5 +627,14 @@ def page2tsv_cli(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpo
 @click.option('--ned-priority', type=int, default=1)
 def alto2tsv_cli(alto_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
              noproxy, scale_factor, ned_threshold, ned_priority):
+    """
+
+        Converts a ALTO-XML file into a TSV file that can be edited with neat.
+        Optionally the tool also accepts NER and Entitiy Linking API-Endpoints as parameters and
+        performs NER and EL and the document if these are provided.
+
+        ALTO_XML_FILE: The source page-XML file.
+        TSV_OUT_FILE: Resulting TSV file.
+        """
     return alto2tsv(alto_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
              noproxy, scale_factor, ned_threshold, ned_priority)
