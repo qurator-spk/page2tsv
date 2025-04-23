@@ -586,6 +586,14 @@ def make_page2tsv_commands(xls_file, directory, purpose):
 @click.option('--normalization-file', type=click.Path(exists=True), default=None)
 def page2tsv_cli(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
              noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority, normalization_file):
+    """
+
+    Converts a page-XML file into a TSV file that can be edited with neat.
+
+    PAGE_XML_FILE: The source page-XML file.
+    TSV_OUT_FILE: Resulting TSV file.
+    """
+
     return page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
              noproxy, scale_factor, ned_threshold, min_confidence, max_confidence, ned_priority, normalization_file)
 
