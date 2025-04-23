@@ -66,29 +66,66 @@ annotate-tsv enp_DE.tsv enp_DE-annotated.tsv
 # Command-line interface:
 
 ```
-page2tsv [OPTIONS] PAGE_XML_FILE TSV_OUT_FILE
+page2tsv --help
+Usage: page2tsv [OPTIONS] PAGE_XML_FILE TSV_OUT_FILE
+
+  Converts a page-XML file into a TSV file that can be edited with neat.
+  Optionally the tool also accepts NER and Entitiy Linking API-Endpoints as
+  parameters and performs NER and EL and the document if these are provided.
+
+  PAGE_XML_FILE: The source page-XML file. TSV_OUT_FILE: Resulting TSV file.
 
 Options:
-  --purpose [NERD|OCR]      Purpose of output tsv file.
-                            
-                            NERD: NER/NED application/ground-truth creation.
-                            
-                            OCR: OCR application/ground-truth creation.
-                            
-                            default: NERD.
-  --image-url TEXT
-  --ner-rest-endpoint TEXT  REST endpoint of sbb_ner service. See
-                            https://github.com/qurator-spk/sbb_ner for
-                            details. Only applicable in case of NERD.
-  --ned-rest-endpoint TEXT  REST endpoint of sbb_ned service. See
-                            https://github.com/qurator-spk/sbb_ned for
-                            details. Only applicable in case of NERD.
-  --noproxy                 disable proxy. default: enabled.
-  --scale-factor FLOAT      default: 1.0
+  --purpose [NERD|OCR]       Purpose of output tsv file.
+                             
+                             NERD: NER/NED application/ground-truth creation.
+                             
+                             OCR: OCR application/ground-truth creation.
+                             
+                             default: NERD.
+  --image-url TEXT           An image retrieval link that enables neat to show
+                             the scan images corresponding to the text tokens.
+                             Example: https://content.staatsbibliothek-berlin.
+                             de/zefys/SNP26824620-18371109-0-1-0-0/left,top,wi
+                             dth,height/full/0/default.jpg
+  --ner-rest-endpoint TEXT   REST endpoint of sbb_ner service. See
+                             https://github.com/qurator-spk/sbb_ner for
+                             details. Only applicable in case of NERD.
+  --ned-rest-endpoint TEXT   REST endpoint of sbb_ned service. See
+                             https://github.com/qurator-spk/sbb_ned for
+                             details. Only applicable in case of NERD.
+  --noproxy                  disable proxy. default: enabled.
+  --scale-factor FLOAT       default: 1.0
   --ned-threshold FLOAT
   --min-confidence FLOAT
   --max-confidence FLOAT
   --ned-priority INTEGER
-  --help                    Show this message and exit.
+  --normalization-file PATH
+  --help                     Show this message and exit.
+```
 
+```
+tsv2tsv --help
+Usage: tsv2tsv [OPTIONS] TSV_IN_FILE
+
+Options:
+  --tsv-out-file PATH          Write modified TSV to this file.
+  --ner-rest-endpoint TEXT     REST endpoint of sbb_ner service. See
+                               https://github.com/qurator-spk/sbb_ner for
+                               details.
+  --noproxy                    disable proxy. default: enabled.
+  --num-tokens                 Print number of tokens in input/output file.
+  --sentence-count             Print sentence count in input/output file.
+  --max-sentence-len           Print maximum sentence len for input/output
+                               file.
+  --keep-tokenization          Keep the word tokenization exactly as it is.
+  --sentence-split-only        Do only sentence splitting.
+  --show-urls                  Print contained visualization URLs.
+  --just-zero                  Process only files that have max sentence
+                               length zero,i.e., that do not have sentence
+                               splitting.
+  --sanitize-sentence-numbers  Sanitize sentence numbering.
+  --show-columns               Show TSV columns.
+  --drop-column TEXT           Drop column
+  --help                       Show this message and exit.
 ```
