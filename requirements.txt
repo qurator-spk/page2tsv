@@ -1,3 +1,3 @@
 ocrd >= 2.23.2
 pandas
-qurator-sbb-utils
+qurator-sbb-utils @ git+https://github.com/qurator-spk/sbb_utils.git
