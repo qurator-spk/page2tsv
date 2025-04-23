@@ -129,3 +129,40 @@ Options:
   --drop-column TEXT           Drop column
   --help                       Show this message and exit.
 ```
+
+```
+alto2tsv --help
+Usage: alto2tsv [OPTIONS] ALTO_XML_FILE TSV_OUT_FILE
+
+  Converts a ALTO-XML file into a TSV file that can be edited with neat.
+  Optionally the tool also accepts NER and Entitiy Linking API-Endpoints as
+  parameters and performs NER and EL and the document if these are provided.
+
+  ALTO_XML_FILE: The source ALTO-XML file. 
+  TSV_OUT_FILE: Resulting TSV file.
+
+Options:
+  --purpose [NERD|OCR]      Purpose of output tsv file.
+                            
+                            NERD: NER/NED application/ground-truth creation.
+                            
+                            OCR: OCR application/ground-truth creation.
+                            
+                            default: NERD.
+  --image-url TEXT          An image retrieval link that enables neat to show
+                            the scan images corresponding to the text tokens.
+                            Example: https://content.staatsbibliothek-berlin.d
+                            e/zefys/SNP26824620-18371109-0-1-0-0/left,top,widt
+                            h,height/full/0/default.jpg
+  --ner-rest-endpoint TEXT  REST endpoint of sbb_ner service. See
+                            https://github.com/qurator-spk/sbb_ner for
+                            details. Only applicable in case of NERD.
+  --ned-rest-endpoint TEXT  REST endpoint of sbb_ned service. See
+                            https://github.com/qurator-spk/sbb_ned for
+                            details. Only applicable in case of NERD.
+  --noproxy                 disable proxy. default: enabled.
+  --scale-factor FLOAT      default: 1.0
+  --ned-threshold FLOAT
+  --ned-priority INTEGER
+  --help                    Show this message and exit.
+```

@@ -633,7 +633,7 @@ def alto2tsv_cli(alto_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpo
         Optionally the tool also accepts NER and Entitiy Linking API-Endpoints as parameters and
         performs NER and EL and the document if these are provided.
 
-        ALTO_XML_FILE: The source page-XML file.
+        ALTO_XML_FILE: The source ALTO-XML file.
         TSV_OUT_FILE: Resulting TSV file.
         """
     return alto2tsv(alto_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint, ned_rest_endpoint,
