@@ -20,7 +20,7 @@ Update pip:
 ```
 pip install -U pip
 ```
-Install sbb_images:
+Install tsvtools:
 ```
 pip install git+https://github.com/qurator-spk/page2tsv.git
 ```
