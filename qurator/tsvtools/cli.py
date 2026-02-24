@@ -403,6 +403,14 @@ def page2tsv(page_xml_file, tsv_out_file, purpose, image_url, ner_rest_endpoint,
     tsv = []
     line_info = []
 
+    if image_url == 'http://empty':
+        creator = pcgts.Metadata.get_Creator()
+
+        neat_url_ma = re.match(r"(.*)\|NEAT_URL:(.*?)\|.*", creator)
+
+        if neat_url_ma:
+            image_url = neat_url_ma.group(2)
+
     _unicode_normalize = unicode_normalize
 
     if normalization_file is not None:
