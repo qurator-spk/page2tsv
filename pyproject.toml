@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+
+[project]
+name = "qurator_tsvtools"
+authors = [
+    {name = "Kai Labusch", email = "Kai.Labusch@sbb.spk-berlin.de"},
+]
+description = "Working with QURATOR TSV, especially for neat"
+readme = "README.md"
+license = {text = "Apache License 2.0"}
+requires-python = ">=3.6"
+keywords = ["qurator"]
+
+dynamic = ["version", "dependencies"]
+
+# https://pypi.org/classifiers/
+classifiers = [
+	'Intended Audience :: Science/Research',
+	'License :: OSI Approved :: Apache Software License',
+	'Programming Language :: Python :: 3',
+	'Topic :: Scientific/Engineering :: Artificial Intelligence',
+]
+
+[project.scripts]
+extract-doc-links = "qurator.tsvtools.cli:extract_document_links"
+annotate-tsv = "qurator.tsvtools.cli:annotate_tsv"
+ocrd-neat-export = "qurator.tsvtools.ocrd_cli:export_cli"
+ocrd-neat-import = "qurator.tsvtools.ocrd_cli:import_cli"
+page2tsv = "qurator.tsvtools.cli:page2tsv_cli"
+tsv2page = "qurator.tsvtools.cli:tsv2page_cli"
+alto2tsv = "qurator.tsvtools.cli:alto2tsv_cli"
+tsv2tsv = "qurator.tsvtools.cli:tsv2tsv"
+make-page2tsv-commands = "qurator.tsvtools.cli:make_page2tsv_commands"
+
+[project.urls]
+Homepage = "https://github.com/qurator-spk/page2tsv"
+Repository = "https://github.com/qurator-spk/page2tsv.git"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}

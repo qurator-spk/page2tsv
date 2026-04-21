@@ -1,13 +1,12 @@
 from json import loads
 from pathlib import Path
-from pkg_resources import resource_string
 from re import sub as re_sub
 
 import pandas as pd
 from PIL import Image
 
 from ocrd import Processor
-from ocrd_utils import getLogger, make_file_id, assert_file_grp_cardinality, MIMETYPE_PAGE
+from ocrd_utils import getLogger, make_file_id, assert_file_grp_cardinality, MIMETYPE_PAGE, resource_string
 from ocrd_models import OcrdExif
 from ocrd_models.constants import NAMESPACES as NS
 from ocrd_models.ocrd_page import TextEquivType, to_xml
@@ -15,7 +14,7 @@ from ocrd_modelfactory import page_from_file
 
 from .cli import page2tsv
 
-OCRD_TOOL = loads(resource_string(__name__, 'ocrd-tool.json'))
+OCRD_TOOL = loads(resource_string('qurator.tsvtools', 'ocrd-tool.json'))
 
 class OcrdNeatExportProcessor(Processor):
 
